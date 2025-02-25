@@ -1,4 +1,4 @@
-
+package com.lee.lesson_saple.basic;
 
 public class ArithmeticGUI {
     public static void main(String[] argv) {

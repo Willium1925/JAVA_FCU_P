@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package com.lee.self_practice.basic;
 
 public class selfDemo {
 
