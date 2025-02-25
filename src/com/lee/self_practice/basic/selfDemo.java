@@ -38,7 +38,7 @@ public class selfDemo {
 //        int an = a(n-1) + a(n-2);
 
         for (int n = 0; n <= 3; n++) {
-            System.out.println("我是willium沒錯");
+            System.out.println("我是willium沒錯，更換成JAVA_FCU");
         }
     }
 }
