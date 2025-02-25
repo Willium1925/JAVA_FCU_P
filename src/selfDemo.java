@@ -31,11 +31,11 @@ public class selfDemo {
     }
     */
 
-        int a0 = 0;
-        int a1 = 1;
-        int a2 = a1 + a0;
-        int a3 = a2 + a1;
-        int an = a(n-1) + a(n-2);
+//        int a0 = 0;
+//        int a1 = 1;
+//        int a2 = a1 + a0;
+//        int a3 = a2 + a1;
+//        int an = a(n-1) + a(n-2);
 
         for (int n = 0; n <= 3; n++) {
             System.out.println();
