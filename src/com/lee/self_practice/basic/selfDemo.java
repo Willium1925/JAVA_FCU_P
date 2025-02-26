@@ -1,5 +1,7 @@
 package com.lee.self_practice.basic;
 
+import java.util.Scanner;
+
 public class selfDemo {
 
     public static void main(String[] args) {
@@ -31,14 +33,44 @@ public class selfDemo {
     }
     */
 
+
+        // 費氏數列（Fibonacci)，輸入一個數 n，印出前 n 個費氏數列數字（Fibonacci: 0, 1, 1, 2, 3, 5, 8, ...）。
+
 //        int a0 = 0;
 //        int a1 = 1;
 //        int a2 = a1 + a0;
 //        int a3 = a2 + a1;
 //        int an = a(n-1) + a(n-2);
 
-        for (int n = 0; n <= 3; n++) {
-            System.out.println("我是willium沒錯，更換成JAVA_FCU");
+        // 倒三角形星號，輸入一個數 n，用 * 印出倒三角形，例如：
+//        *****
+//        ****
+//        ***
+//        **
+//        *
+        /*
+        Scanner s = new Scanner(System.in);
+        System.out.println("請指定星星數量");
+        int userStar = s.nextInt();
+        int i = userStar;
+        while(i>=1) {
+            for(int j=i ; j >= 1 ; j--) {
+                System.out.print("*");
+            }
+            System.out.println();
+            i--;
+        }
+        s.close();
+        */
+
+        Scanner s = new Scanner(System.in);
+        System.out.println("請指定星星數量");
+        int maxStars = s.nextInt();
+        for(int row = maxStars ; row >= 1 ; row--) {
+            for(int star = row ; star >= 1 ; star-- ) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 }
