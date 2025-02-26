@@ -100,23 +100,40 @@ public class Control_advanced02 {
 //            System.out.println(userInsert.equals("end"));
 //        }
 
-        Scanner s = new Scanner(System.in);
         System.out.println("請指定星星數量");
-        if (s.hasNext()) {
-            if ()
-        }
+        Scanner s = new Scanner(System.in);
 
-        while (s.hasNext()) {
+        while (true) {
 
-            int maxStars = s.nextInt();
-            for(int row = maxStars ; row >= 1 ; row--) {
-                for(int star = row ; star >= 1 ; star-- ) {
-                    System.out.print("*");
+            if (s.hasNext()) {
+                if (s.hasNextInt()) {
+                    int maxStars = s.nextInt();
+                    if (maxStars>0) {
+
+                        while (true) {
+                            for(int row = maxStars ; row >= 1 ; row--) {
+                                for(int star = row ; star >= 1 ; star-- ) {
+                                    System.out.print("*");
+                                }
+                                System.out.println();
+                            }
+                            break;
+                        }
+                    } else {
+                        System.out.println("請輸入正整數");
+                        break;
+                    }
+                } else {
+                    System.out.println("請輸入整數");
+                    break;
                 }
-                System.out.println();
+            } else {
+                System.out.println("請輸入數字");
+                break;
             }
-            System.out.println("請指定星星數量");
+            continue;
         }
+
 
 
     }
