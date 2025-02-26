@@ -2,7 +2,7 @@ package com.lee.self_practice.basic;
 
 import java.util.Scanner;
 
-public class Control_advanced {
+public class Control_advanced01 {
 
 	public static void main(String[] args) {
 		// 使用巢狀迴圈印出 1 到 9 的九九乘法表。

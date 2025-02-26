@@ -2,7 +2,7 @@ package com.lee.self_practice.basic;
 
 import java.util.Scanner;
 
-public class selfDemo {
+public class Control_advanced02 {
 
     public static void main(String[] args) {
         /*
