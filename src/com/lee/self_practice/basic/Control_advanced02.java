@@ -109,32 +109,25 @@ public class Control_advanced02 {
                 if (s.hasNextInt()) {
                     int maxStars = s.nextInt();
                     if (maxStars>0) {
-
-                        while (true) {
-                            for(int row = maxStars ; row >= 1 ; row--) {
-                                for(int star = row ; star >= 1 ; star-- ) {
-                                    System.out.print("*");
-                                }
-                                System.out.println();
+                        for(int row = maxStars ; row >= 1 ; row--) {
+                            for(int star = row ; star >= 1 ; star-- ) {
+                                System.out.print("*");
                             }
-                            break;
+                            System.out.println();
                         }
                     } else {
                         System.out.println("請輸入正整數");
-                        break;
+                        s.next();
                     }
                 } else {
                     System.out.println("請輸入整數");
-                    break;
+                    s.next();
                 }
             } else {
                 System.out.println("請輸入數字");
-                break;
+                s.next();
             }
             continue;
         }
-
-
-
     }
 }
