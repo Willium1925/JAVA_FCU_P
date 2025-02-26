@@ -63,14 +63,61 @@ public class Control_advanced02 {
         s.close();
         */
 
+        /*
+        Scanner s = new Scanner(System.in);
+        //String string1 = new String("end");
+        if (s.hasNext()) {
+            String string_next = s.next();
+            String string_valueOf = String.valueOf(s);
+            String string_toString = s.toString();
+
+            System.out.println("s.next() = "+string_next);
+            System.out.println("String.valueOf(s) = "+string_valueOf);
+            System.out.println("s.toString() = "+string_toString);
+        }
+        */
+
+
+//        Scanner s = new Scanner(System.in);
+//        System.out.println("請指定星星數量");
+//        while (s.hasNext()) {
+//
+//            int maxStars = s.nextInt();
+//            for(int row = maxStars ; row >= 1 ; row--) {
+//                for(int star = row ; star >= 1 ; star-- ) {
+//                    System.out.print("*");
+//                }
+//                System.out.println();
+//            }
+//
+//        }
+
+//        Scanner ss = new Scanner(System.in);
+//        String end;
+//        if (ss.hasNext()) {
+//            String userInsert = ss.next();
+//            System.out.println(userInsert);
+//            System.out.println(userInsert.equals("end"));
+//        }
+
         Scanner s = new Scanner(System.in);
         System.out.println("請指定星星數量");
-        int maxStars = s.nextInt();
-        for(int row = maxStars ; row >= 1 ; row--) {
-            for(int star = row ; star >= 1 ; star-- ) {
-                System.out.print("*");
-            }
-            System.out.println();
+        if (s.hasNext()) {
+            if ()
         }
+
+        while (s.hasNext()) {
+
+            int maxStars = s.nextInt();
+            for(int row = maxStars ; row >= 1 ; row--) {
+                for(int star = row ; star >= 1 ; star-- ) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            System.out.println("請指定星星數量");
+        }
+
+
     }
 }
