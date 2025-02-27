@@ -66,18 +66,13 @@ public class HomeWork_0227 {
         int c = headNum - r;
         String strCR = "總共有" + c + "隻雞，" + r + "隻兔子";
 
-        System.out.println(headNum>footNum? strCR : "該數據無解");
-
-
-//        if (headNum>footNum) {
-//            System.out.println("該數據無解，你是否遭遇The THING");
-//        } else if ((footNum-2*headNum)%2 == 0) {
-//            int r = (footNum-2*headNum)/2;
-//            int c = headNum - r;
-//            System.out.println("總共有" + c + "隻雞，" + r + "隻兔子");
-//        } else {
-//            System.out.println("該數據無解");
-//        }
+        if (headNum>footNum || r<0 || c<0) {
+            System.out.println("該數據無解，你是否遭遇The THING");
+        } else if ((footNum-2*headNum)%2 == 0) {
+            System.out.println(strCR);
+        } else {
+            System.out.println("該數據無解");
+        }
 
 
 //        請設計一程式，讓使用者輸入任意整數，程式判斷該數字為奇數或偶數。
