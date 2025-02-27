@@ -38,9 +38,22 @@ public class HomeWork_0227 {
         * 是否有輸入
         * 輸入是否為單純空白或太薄
         * 不論是否前面有空白都能讀取，但判斷是否為數字
-        * 是否為正整數*/
+        * 是否為正整數
+        */
         System.out.println("請輸入任意正整數");
         Scanner s02 = new Scanner(System.in);
+
+        while (true) {
+            if (s02.hasNext()) {
+                if (s02.hasNextLine()) {
+
+                } else {
+
+                }
+            } else {
+                System.out.println("請勿空白");
+            }
+        }
 
         int userInsert02 = s02.nextInt();
         int a = userInsert02/13;
