@@ -21,10 +21,12 @@ public class HomeWork_0227 {
 //        int z = n01/10;
 //        int y = (n01%10)/5;
 //        int x = (n01%5);
-//        System.out.println(n01 + "總共需要" + "\n"
-//                                            + z + "個十元" + "\n"
-//                                            + y + "個五元" + "\n"
-//                                            + x + "個一元" );
+//        String str = n01 + "總共需要" + "\n"
+//                + z + "個十元" + "\n"
+//                + y + "個五元" + "\n"
+//                + x + "個一元";
+//
+//        System.out.println( n01<=999 ? str : "輸入過大");
 
 
 
@@ -35,7 +37,7 @@ public class HomeWork_0227 {
 //        System.out.println("請輸入任意正整數");
 //        Scanner s02 = new Scanner(System.in);
 //        int userInsert02 = s02.nextInt();
-//        int a = (userInsert02-(userInsert02%13))/13;
+//        int a = userInsert02/13;
 //        int b = userInsert02%13;
 //        System.out.println(userInsert02 + "除以13" + "，商數是" + a + "，餘數是" + b );
 
@@ -53,22 +55,29 @@ public class HomeWork_0227 {
 //        2*c+2*r=2*headNum;
 //        footNum-2*headNum=2*r;
 
-//        System.out.println("有多少隻腳？");
-//        Scanner s03 = new Scanner(System.in);
-//        int footNum = s03.nextInt();
-//        //s03.next(); // 為何不用打這行？
-//        System.out.println("有多少顆頭？");
-//        int headNum = s03.nextInt();
-//
-//        if ((footNum-2*headNum)%2 == 0) {
+        System.out.println("有多少隻腳？");
+        Scanner s03 = new Scanner(System.in);
+        int footNum = s03.nextInt();
+        //s03.next(); // 為何不用打這行？
+        System.out.println("有多少顆頭？");
+        int headNum = s03.nextInt();
+
+        int r = (footNum-2*headNum)/2;
+        int c = headNum - r;
+        String strCR = "總共有" + c + "隻雞，" + r + "隻兔子";
+
+        System.out.println(headNum>footNum? strCR : "該數據無解");
+
+
+//        if (headNum>footNum) {
+//            System.out.println("該數據無解，你是否遭遇The THING");
+//        } else if ((footNum-2*headNum)%2 == 0) {
 //            int r = (footNum-2*headNum)/2;
 //            int c = headNum - r;
 //            System.out.println("總共有" + c + "隻雞，" + r + "隻兔子");
 //        } else {
 //            System.out.println("該數據無解");
 //        }
-
-
 
 
 //        請設計一程式，讓使用者輸入任意整數，程式判斷該數字為奇數或偶數。

@@ -106,8 +106,9 @@ public class Control_advanced02 {
         while (true) {
 
             if (s.hasNext()) {
-                if (s.hasNextInt()) {
-                    int maxStars = s.nextInt();
+                int maxStars=0
+                if (s.hasNextInt()&&(maxStars>0)) {
+                     maxStars = s.nextInt();
                     if (maxStars>0) {
                         for(int row = maxStars ; row >= 1 ; row--) {
                             for(int star = row ; star >= 1 ; star-- ) {
