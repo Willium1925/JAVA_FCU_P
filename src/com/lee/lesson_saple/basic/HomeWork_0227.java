@@ -73,10 +73,10 @@ public class HomeWork_0227 {
 
 //        請設計一程式，讓使用者輸入任意整數，程式判斷該數字為奇數或偶數。
 //        例：輸入5，輸出奇數；輸入6，輸出偶數。
-        System.out.println("請輸入任意正整數");
-        Scanner s04 = new Scanner(System.in);
-        int userInsert = s04.nextInt();
-        System.out.println(userInsert%2 == 0 ? "是偶數" : "是奇數" );
+//        System.out.println("請輸入任意正整數");
+//        Scanner s04 = new Scanner(System.in);
+//        int userInsert = s04.nextInt();
+//        System.out.println(userInsert%2 == 0 ? "是偶數" : "是奇數" );
 
 //        請設計一程式，從使用者得到一大於0的整數數字n，輸出1+2+3+..+n之結果。
 //        例如：輸入5，輸出15
@@ -88,6 +88,8 @@ public class HomeWork_0227 {
 //            sum = sum + i;
 //        }
 //        System.out.println("1~" + userInsert + "的總和為" + sum);
+//        int summm = ((1+userInsert)*userInsert)/2;
+//        System.out.println("1~" + userInsert + "的總和為" + summm);
 
 
 
