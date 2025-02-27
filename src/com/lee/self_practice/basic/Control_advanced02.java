@@ -102,7 +102,7 @@ public class Control_advanced02 {
 
         System.out.println("請指定星星數量");
         Scanner s = new Scanner(System.in);
-
+/*
         while (true) {
 
             if (s.hasNext()) {
@@ -130,5 +130,7 @@ public class Control_advanced02 {
             }
             continue;
         }
+        */
+
     }
 }
