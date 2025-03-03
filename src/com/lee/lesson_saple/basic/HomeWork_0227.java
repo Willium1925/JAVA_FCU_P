@@ -43,11 +43,11 @@ public class HomeWork_0227 {
         System.out.println("請輸入任意正整數");
         Scanner s02 = new Scanner(System.in);
 
-        if(s02.hasNextLine()) { // 有喔
-            System.out.println("有喔");
-        } else {
-            System.out.println("沒");
-        }
+//        if(s02.hasNextLine()) { // 有喔
+//            System.out.println("有喔");
+//        } else {
+//            System.out.println("沒");
+//        }
 //
 //        if(s02.hasNext()) { // 沒
 //            System.out.println("有喔");
@@ -56,10 +56,10 @@ public class HomeWork_0227 {
 //        }
 
 
-//        while (true) {
+        while (true) {
 //            String str = s02.nextLine();
-//
-//
+
+
 //            if (!str.isEmpty()) {
 //                System.out.println("請勿輸入空白");
 //                if (s02.hasNextDouble() && s02.nextDouble()>0) {
@@ -71,8 +71,25 @@ public class HomeWork_0227 {
 //                System.out.println("請勿空白");
 //            }
 
+            if (s02.hasNextInt()) {
+                System.out.println("有nextint");
+                s02.nextLine();
+            } else if (s02.hasNextDouble()) {
+                System.out.println("有nextdouble");
+                s02.nextLine();
+            }
+        }
+
 //            if (s02.hasNextLine()) {
-//
+//                System.out.println("有喔"); // 空格，enter都會偵測
+//                if (!s02.hasNextDouble() || s02.nextDouble()<0) {
+//                    System.out.println("請確實輸入正整數");
+//                    s02.nextLine();
+//                } else {
+//                    if (s02.hasNextInt()) {
+//                        System.out.println("恭喜!!");
+//                    }
+//                }
 //            } else {
 //                System.out.println("請輸入");
 //                s02.nextLine();
