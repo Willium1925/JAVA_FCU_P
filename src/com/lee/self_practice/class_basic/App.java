@@ -13,21 +13,31 @@ class Test02 {
         int a = 30;
         System.out.println(Test01.a);
         System.out.println(Test02.a);
-        Test03.talk();
-        Test03.talk_advanced("進階說話");
-        Test03.talk_advanced("請輸入想說的話:");
+
+        Poeple01.talk();
+        Poeple01.talk_advanced("進階說話");
+        Poeple01.talk_advanced("請輸入想說的話:");
         Scanner sca = new Scanner(System.in);
         //System.out.println(sca.nextLine());
-        Test03.talk_advanced(sca.nextLine());
+        Poeple01.talk_advanced(sca.nextLine());
+
+        BasicMath.counter(6,7);
     }
 }
 
-class Test03 {
+class Poeple01 {
     static void talk(){
         System.out.println("單純說話");
     }
 
     static void talk_advanced(String string){
         System.out.println(string);
+    }
+}
+
+class BasicMath {
+    static  void counter(int a, int b){
+        int total = a + b;
+        System.out.println(total);
     }
 }
