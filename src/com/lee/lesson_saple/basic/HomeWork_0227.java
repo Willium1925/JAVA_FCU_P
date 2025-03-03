@@ -43,11 +43,11 @@ public class HomeWork_0227 {
         System.out.println("請輸入任意正整數");
         Scanner s02 = new Scanner(System.in);
 
-//        if(s02.hasNextLine()) { // 有喔
-//            System.out.println("有喔");
-//        } else {
-//            System.out.println("沒");
-//        }
+        if(s02.hasNextLine()) { // 有喔
+            System.out.println("有喔");
+        } else {
+            System.out.println("沒");
+        }
 //
 //        if(s02.hasNext()) { // 沒
 //            System.out.println("有喔");
@@ -56,10 +56,10 @@ public class HomeWork_0227 {
 //        }
 
 
-        while (true) {
-            String str = s02.nextLine();
-
-
+//        while (true) {
+//            String str = s02.nextLine();
+//
+//
 //            if (!str.isEmpty()) {
 //                System.out.println("請勿輸入空白");
 //                if (s02.hasNextDouble() && s02.nextDouble()>0) {
@@ -77,7 +77,7 @@ public class HomeWork_0227 {
 //                System.out.println("請輸入");
 //                s02.nextLine();
 //            }
-        }
+//        }
 
 //        if (s02.hasNextDouble() && s02.nextDouble()>0) {
 //
