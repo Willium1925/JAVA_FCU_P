@@ -43,22 +43,53 @@ public class HomeWork_0227 {
         System.out.println("請輸入任意正整數");
         Scanner s02 = new Scanner(System.in);
 
+//        if(s02.hasNextLine()) { // 有喔
+//            System.out.println("有喔");
+//        } else {
+//            System.out.println("沒");
+//        }
+//
+//        if(s02.hasNext()) { // 沒
+//            System.out.println("有喔");
+//        } else {
+//            System.out.println("沒");
+//        }
+
+
         while (true) {
-            if (s02.hasNext()) {
-                if (s02.hasNextLine()) {
+            String str = s02.nextLine();
 
-                } else {
 
-                }
-            } else {
-                System.out.println("請勿空白");
-            }
+//            if (!str.isEmpty()) {
+//                System.out.println("請勿輸入空白");
+//                if (s02.hasNextDouble() && s02.nextDouble()>0) {
+//                    System.out.println("有喔");
+//                } else {
+//                    System.out.println("請輸入正整數");
+//                }
+//            } else {
+//                System.out.println("請勿空白");
+//            }
+
+//            if (s02.hasNextLine()) {
+//
+//            } else {
+//                System.out.println("請輸入");
+//                s02.nextLine();
+//            }
         }
 
-        int userInsert02 = s02.nextInt();
-        int a = userInsert02/13;
-        int b = userInsert02%13;
-        System.out.println(userInsert02 + "除以13" + "，商數是" + a + "，餘數是" + b );
+//        if (s02.hasNextDouble() && s02.nextDouble()>0) {
+//
+//            int userInsert02 = s02.nextInt();
+//            int a = userInsert02/13;
+//            int b = userInsert02%13;
+//            System.out.println(userInsert02 + "除以13" + "，商數是" + a + "，餘數是" + b );
+//
+//        } else {
+//            System.out.println("請輸入正整數");
+//            s02.nextLine();
+//        }
 
 
 
