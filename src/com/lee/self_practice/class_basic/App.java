@@ -26,7 +26,11 @@ class Test02 {
 
         System.out.println("請輸入第一個數字");
         Scanner sca003 = new Scanner(System.in);
-        int x = Integer.parseInt(Poeple01.talk_advanced(sca003.nextLine()));
+        //System.out.println((sca003.nextLine()).getClass());
+        //System.out.println(Poeple01.talk_advanced(sca003.nextLine())); // 這是多餘的
+        Poeple01.talk_advanced(sca003.nextLine()); // 這樣就可以了
+
+        int x = Integer.parseInt(Poeple01.talk_advanced(sca003.nextLine())); // 這不行，因為我寫的Poeple01.talk_advanced方法，齊集果
     }
 }
 
