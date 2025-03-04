@@ -40,6 +40,8 @@ public class HomeWork_0227 {
         * 不論是否前面有空白都能讀取，但判斷是否為數字
         * 是否為正整數
         */
+
+        /*
         System.out.println("請輸入任意正整數");
         Scanner s02 = new Scanner(System.in);
 
@@ -79,6 +81,8 @@ public class HomeWork_0227 {
                 s02.nextLine();
             }
         }
+
+         */
 
 //            if (s02.hasNextLine()) {
 //                System.out.println("有喔"); // 空格，enter都會偵測
@@ -151,16 +155,17 @@ public class HomeWork_0227 {
 
 //        請設計一程式，從使用者得到一大於0的整數數字n，輸出1+2+3+..+n之結果。
 //        例如：輸入5，輸出15
-//        System.out.println("請指定一正整數n，將計算1~n之總和");
-//        Scanner s05 = new Scanner(System.in);
-//        int userInsert = s05.nextInt();
-//        int sum = 0;
-//        for (int i = 1 ; i <= userInsert ; i++) {
-//            sum = sum + i;
-//        }
-//        System.out.println("1~" + userInsert + "的總和為" + sum);
-//        int summm = ((1+userInsert)*userInsert)/2;
-//        System.out.println("1~" + userInsert + "的總和為" + summm);
+        System.out.println("請指定一正整數n，將計算1~n之總和");
+        Scanner s05 = new Scanner(System.in);
+        int userInsert = s05.nextInt();
+        int sum = 0;
+        for (int i = 1 ; i <= userInsert ; i++) { // 數字太大會很耗效能，但不會爆掉
+            sum = sum + i;
+        }
+        System.out.println("1~" + userInsert + "的總和為" + sum);
+
+        int summm = ((1+userInsert)*userInsert)/2; // 快，但數字太大會超過int範圍爆掉
+        System.out.println("1~" + userInsert + "的總和為" + summm);
 
 
 
