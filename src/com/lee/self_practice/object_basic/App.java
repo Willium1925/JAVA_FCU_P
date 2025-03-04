@@ -1,4 +1,4 @@
-package com.lee.self_practice.class_basic;
+package com.lee.self_practice.object_basic;
 
 import java.util.Scanner;
 
