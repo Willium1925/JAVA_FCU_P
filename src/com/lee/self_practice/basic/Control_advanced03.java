@@ -70,7 +70,7 @@ public class Control_advanced03 {
             if (str.equals("e")) {
                 System.out.println("系統關閉");
                 break;
-            } else if (Integer.parseInt(str)) {
+            } else if (Integer.parseInt(str) < 0) {
                 System.out.println("請輸入正整數");
                 return;
             }
