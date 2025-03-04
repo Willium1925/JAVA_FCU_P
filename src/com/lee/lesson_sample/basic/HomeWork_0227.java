@@ -1,4 +1,4 @@
-package com.lee.lesson_saple.basic;
+package com.lee.lesson_sample.basic;
 
 import java.util.Scanner;
 
