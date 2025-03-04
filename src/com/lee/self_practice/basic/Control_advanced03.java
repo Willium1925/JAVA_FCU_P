@@ -40,10 +40,37 @@ public class Control_advanced03 {
         while (true) {
 
 
-            if (sc.nextLine() == "e") {
+            if (sc.nextLine().equals("e")) {
                 System.out.println("系統關閉");
                 break;
             } else if (!sc.hasNextInt()) {
+                System.out.println("請輸入正整數");
+                return;
+            }
+
+            int userInput = sc.nextInt();
+            int total = 0;
+            for (int i = 1; i <= userInput; i++) {
+                total = total + i;
+            }
+
+            System.out.println("1~" + userInput +"的總和是" + total);
+
+        }
+    }
+
+    static void add03() {
+        System.out.println("add03運作，請輸入正整數，或輸入e結束");
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        while (true) {
+
+
+            if (str.equals("e")) {
+                System.out.println("系統關閉");
+                break;
+            } else if (Integer.parseInt(str)) {
                 System.out.println("請輸入正整數");
                 return;
             }
