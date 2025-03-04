@@ -10,17 +10,17 @@ class Test01 {
 class Test02 {
     static int a = 20;
     public static void main(String[] args) {
-//        int a = 30;
-//        System.out.println(Test01.a);
-//        System.out.println(Test02.a);
-//
-//        Poeple01.talk();
-//        Poeple01.talk_advanced("進階說話");
-//        Poeple01.talk_advanced("請輸入想說的話:");
-//        Scanner sca = new Scanner(System.in);
+        int a = 30;
+        //System.out.println(Test01.a);
+        //System.out.println(Test02.a);
+        //
+        //Poeple01.talk();
+        //Poeple01.talk_advanced("進階說話");
+        //Poeple01.talk_advanced("請輸入想說的話:");
+        //Scanner sca = new Scanner(System.in);
         //System.out.println(sca.nextLine());
         //Poeple01.talk_advanced(sca.nextLine());
-
+        //
         //BasicMath.counter(6,7);
         //BasicMath.counter((Integer.parseInt(Poeple01.talk_advanced(sca.nextLine()))), (Integer.parseInt(Poeple01.talk_advanced(sca.nextLine()))));
 
@@ -29,8 +29,8 @@ class Test02 {
         //System.out.println((sca003.nextLine()).getClass());
         //System.out.println(Poeple01.talk_advanced(sca003.nextLine())); // 這是多餘的
         //Poeple01.talk_advanced(sca003.nextLine()); // 這樣就可以了
-
-
+        //
+        //
         //int x = Integer.parseInt(Poeple01.talk_advanced(sca003.nextLine())); // 這不行，因為我寫的Poeple01.talk_advanced方法，結果是SYSO，並不會產出其他東西，當然也就無法放進來用
         int xr01 = Integer.parseInt(Poeple01.talk_advanced_R(sca003.nextLine())); // 這應該就可以了
 
