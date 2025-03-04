@@ -24,13 +24,21 @@ class Test02 {
         //BasicMath.counter(6,7);
         //BasicMath.counter((Integer.parseInt(Poeple01.talk_advanced(sca.nextLine()))), (Integer.parseInt(Poeple01.talk_advanced(sca.nextLine()))));
 
-        System.out.println("請輸入第一個數字");
         Scanner sca003 = new Scanner(System.in);
+        System.out.println("請輸入第一個數字");
         //System.out.println((sca003.nextLine()).getClass());
         //System.out.println(Poeple01.talk_advanced(sca003.nextLine())); // 這是多餘的
-        Poeple01.talk_advanced(sca003.nextLine()); // 這樣就可以了
+        //Poeple01.talk_advanced(sca003.nextLine()); // 這樣就可以了
 
-        int x = Integer.parseInt(Poeple01.talk_advanced(sca003.nextLine())); // 這不行，因為我寫的Poeple01.talk_advanced方法，齊集果
+
+        //int x = Integer.parseInt(Poeple01.talk_advanced(sca003.nextLine())); // 這不行，因為我寫的Poeple01.talk_advanced方法，結果是SYSO，並不會產出其他東西，當然也就無法放進來用
+        int xr01 = Integer.parseInt(Poeple01.talk_advanced_R(sca003.nextLine())); // 這應該就可以了
+
+        System.out.println("請輸入第二個數字");
+        int xr02 = Integer.parseInt(Poeple01.talk_advanced_R(sca003.nextLine())); // 這應該就可以了
+
+        //System.out.println(BasicMath.counter(xr01, xr02)); // 同理，BasicMath.counter方法的結果是SYSO，不可行
+        System.out.println("兩數相加結果為:" + BasicMath.counter_advanced_R(xr01, xr02));
     }
 }
 
@@ -42,11 +50,19 @@ class Poeple01 {
     static void talk_advanced(String string){
         System.out.println(string);
     }
+
+    static String talk_advanced_R(String string){
+        return string;
+    }
 }
 
 class BasicMath {
     static  void counter(int a, int b){
         int total = a + b;
         System.out.println(total);
+    }
+    static int counter_advanced_R(int a, int b) {
+        int total = a + b;
+        return total;
     }
 }
