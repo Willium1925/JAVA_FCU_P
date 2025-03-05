@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 
 public class Control_advanced04 {
     public static void main(String[] args) {
-        salaryCounter02();
+        salaryCounter03();
     }
     /*
     輸入便利商店工讀生的時數，並計算其薪資
@@ -95,6 +95,7 @@ public class Control_advanced04 {
     static void salaryCounter03() {
         System.out.println("03版運作，請輸入時數");
         Scanner sc = new Scanner(System.in);
+
         try {
             if (!sc.hasNextInt()) {
                 System.out.println("請輸入整數");
@@ -105,10 +106,13 @@ public class Control_advanced04 {
                     System.out.println("不可為零");
                 } else if (userInsert <= 60) {
                     salary = userInsert*120;
+                    System.out.println(salary);
                 } else if (userInsert <= 80) {
                     salary = 60*120 + (userInsert-60)*120*1.25;
+                    System.out.println(salary);
                 } else {
-
+                    salary = 60*120 + 20*120*1.25 + (userInsert-80)*120*1.5;
+                    System.out.println(salary);
                 }
             }
         } catch (InputMismatchException e) {
