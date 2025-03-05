@@ -92,4 +92,30 @@ public class Control_advanced04 {
 
     }
 
+    static void salaryCounter03() {
+        System.out.println("03版運作，請輸入時數");
+        Scanner sc = new Scanner(System.in);
+        try {
+            if (!sc.hasNextInt()) {
+                System.out.println("請輸入整數");
+            } else {
+                int userInsert = sc.nextInt();
+                double salary = 0;
+                if (userInsert <= 0) {
+                    System.out.println("不可為零");
+                } else if (userInsert <= 60) {
+                    salary = userInsert*120;
+                } else if (userInsert <= 80) {
+                    salary = 60*120 + (userInsert-60)*120*1.25;
+                } else {
+
+                }
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("請勿輸入其他字元");
+        }
+
+
+    }
+
 }
