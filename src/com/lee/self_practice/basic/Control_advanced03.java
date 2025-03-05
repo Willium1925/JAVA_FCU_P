@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Control_advanced03 {
     public static void main(String[] args) {
-        add05();
+        add04();
+        System.out.println("yoooooooo~"); // 拿來確認return的作用
     }
     static void add01() {
         System.out.println("add01運作，請輸入正整數，或輸入e結束");
@@ -81,8 +82,8 @@ public class Control_advanced03 {
                     break;
                 } else if (Integer.parseInt(str) < 0) {
                     System.out.println("請輸入正整數");
-                    //return; // 錯
-                    continue;
+                    return; // 錯，回想起定義，return是搭配函式(function 函數 方法)使用，會直接離開函式，返回函式被呼叫的起始處
+                    //continue;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("請正確輸入數字");
