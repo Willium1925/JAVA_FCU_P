@@ -6,7 +6,8 @@ public class HomeWork_0306 {
     public static void main(String[] args) {
 
         //calculator();
-        calculator02();
+        //calculator02();
+        standardWeight();
 
     }
 
@@ -21,26 +22,31 @@ public class HomeWork_0306 {
         String symbol = sc.next(); // 為何不適用nextLine()
 
         System.out.println("請輸入第二個數字");
-        double b = sc.nextDouble();
+        //double b = sc.nextDouble();
+        String bString = sc.next();
 
         double ans = 0;
 
         switch (symbol) {
             case "加", "+":
-                ans = a + b;
-                System.out.println(a + " + " + b + " = " + ans);
+                ans = a + Double.parseDouble(bString);
+                System.out.println(a + " + " + Double.parseDouble(bString) + " = " + ans);
                 break;
             case "減", "-":
-                ans = a - b;
-                System.out.println(a + " - " + b + " = " + ans);
+                ans = a - Double.parseDouble(bString);
+                System.out.println(a + " - " + Double.parseDouble(bString) + " = " + ans);
                 break;
             case "乘", "*", "x", "X":
-                ans = a*b;
-                System.out.println(a + " x " + b + " = " + ans);
+                ans = a*Double.parseDouble(bString);
+                System.out.println(a + " x " + Double.parseDouble(bString) + " = " + ans);
                 break;
-            case "除", "÷":
-                ans = a/b;
-                System.out.println(a + " ÷ " + b + " = " + ans);
+            case "除", "÷", "/":
+                if (bString.equals("0")) {
+                    System.out.println("除法中分母為零是無意義的");
+                } else {
+                    ans = a/Double.parseDouble(bString);
+                    System.out.println( a + " ÷ " + Double.parseDouble(bString) + " = " + ans );
+                }
                 break;
             default:
                 System.out.println("請輸入正確算數要求");
@@ -112,12 +118,9 @@ public class HomeWork_0306 {
             double stdWeightB = (height - 80)*0.7;
             double stdWeightG = (height - 70)*0.6;
 
+            System.out.println(userGender.equals("男")? stdWeightB: stdWeightG);
 
         }
-
-        //int min = y < x ? y : x;
-
-        //gender
     }
 
 }
