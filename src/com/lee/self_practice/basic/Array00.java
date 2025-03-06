@@ -23,7 +23,7 @@ public class Array00 {
         Scanner sc = new Scanner(System.in);
         int stuNum = sc.nextInt();
         int[] stuScore = new int[stuNum];
-        for (int i = 0; i <stuNum; i++) { // 也可以直接stuScore..length
+        for (int i = 0; i <stuNum; i++) { // 也可以直接stuScore..length，這是一個屬性，不是方法，.length()才是方法
             System.out.println("請輸入第"+ (i+1) + "個學生的成績");
             Scanner sc01 = new Scanner(System.in);
             stuScore[i] = sc01.nextInt();
