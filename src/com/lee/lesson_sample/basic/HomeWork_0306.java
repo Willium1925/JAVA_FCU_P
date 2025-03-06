@@ -61,16 +61,15 @@ public class HomeWork_0306 {
         String symbol = sc.next(); // 為何不適用nextLine()
 
         System.out.println("請輸入第二個數字");
+        double b = sc.nextDouble();
         if (symbol.equals("除") || symbol.equals("÷") || symbol.equals("/")) {
-            if ((sc.next()).equals("0")) {
-
+            while ((String.valueOf(b)).equals("0")) {
+                System.out.println("您輸入的第二個數字" + b + "是零");
+                System.out.println("分母不可為零，請重新輸入第二個數字");
+                b = sc.nextDouble();
             }
-            System.out.println("分母不可為零");
         }
-        double b = ;
-
         double ans = 0;
-
         switch (symbol) {
             case "加", "+":
                 ans = a + b;
