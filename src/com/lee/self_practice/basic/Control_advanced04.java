@@ -1,9 +1,20 @@
 package com.lee.self_practice.basic;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class Control_advanced04 {
+    /*
+    丟出例外的撰寫位置，除了放在try catch之外，也可直接寫在程式區塊，也可直接寫在方法先告
+    public static void method() throws IOException {
+        we5f4w3e1f3w5e1;
+        throws IOException {
+            evr56e51r651e5rv1
+        };
+    }
+     */
+
     public static void main(String[] args) {
         salaryCounter03();
     }
