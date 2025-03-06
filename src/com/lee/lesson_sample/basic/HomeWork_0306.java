@@ -6,8 +6,8 @@ public class HomeWork_0306 {
     public static void main(String[] args) {
 
         //calculator();
-        //calculator02();
-        standardWeight();
+        calculator02();
+        //standardWeight();
 
     }
 
@@ -69,11 +69,12 @@ public class HomeWork_0306 {
         System.out.println("請輸入第二個數字");
         double b = sc.nextDouble();
         if (symbol.equals("除") || symbol.equals("÷") || symbol.equals("/")) {
-            while ((String.valueOf(b)).equals("0")) {
-                System.out.println("您輸入的第二個數字" + b + "是零");
-                System.out.println("分母不可為零，請重新輸入第二個數字");
-                b = sc.nextDouble();
-            }
+            System.out.println("除法");
+//            while ((String.valueOf(b)).equals("0")) {
+//                System.out.println("您輸入的第二個數字" + b + "是零");
+//                System.out.println("分母不可為零，請重新輸入第二個數字");
+//                b = sc.nextDouble();
+//            }
         }
         double ans = 0;
         switch (symbol) {
@@ -121,6 +122,10 @@ public class HomeWork_0306 {
             System.out.println(userGender.equals("男")? stdWeightB: stdWeightG);
 
         }
+    }
+
+    static void standardWeight_useBigDecimal() {
+
     }
 
 }
