@@ -114,7 +114,6 @@ public class HomeWork_0306 {
         sc.close();
     }
 
-
     static void standardWeight() {
 
         Scanner sc = new Scanner(System.in);
@@ -159,7 +158,6 @@ public class HomeWork_0306 {
             double stdWeightG = (height - 70)*0.6;
             BigDecimal bigStdWeightB = (bigHeight.subtract(BigDecimal.valueOf(80))).multiply(BigDecimal.valueOf(0.7));
             BigDecimal bigStdWeightG = (bigHeight.subtract(BigDecimal.valueOf(70))).multiply(BigDecimal.valueOf(0.6));;
-
 
             System.out.println(userGender.equals("男")? stdWeightB: stdWeightG);
             System.out.println(userGender.equals("男")? bigStdWeightB: bigStdWeightG);
