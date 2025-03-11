@@ -154,9 +154,9 @@ public class HomeWork_0306 {
             String heightStr = sc.next(); //為何不能用nextLine()?
             double height = Double.parseDouble(heightStr);
             BigDecimal bigHeight = new BigDecimal(heightStr);
-            if (userGender.equals("男") & height < 80) {
+            if (userGender.equals("男") & height <= 80) { // 可以多增查表，依年齡給予身高限制
                 System.out.println("男生身高需大於80");
-            } else if (userGender.equals("女") & height < 70) {
+            } else if (userGender.equals("女") & height <= 70) {
                 System.out.println("女生身高需大於70");
             } else {
                 double stdWeightB = (height - 80)*0.7;
