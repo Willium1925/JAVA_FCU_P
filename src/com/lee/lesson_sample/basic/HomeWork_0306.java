@@ -151,17 +151,22 @@ public class HomeWork_0306 {
             }
 
             System.out.println("請輸入身高");
-            double height = sc.nextDouble();
-            BigDecimal bigHeight = new BigDecimal(height);
+            String heightStr = sc.next(); //為何不能用nextLine()?
+            double height = Double.parseDouble(heightStr);
+            BigDecimal bigHeight = new BigDecimal(heightStr);
+            if (userGender.equals("男") & height < 80) {
+                System.out.println("男生身高需大於80");
+            } else if (userGender.equals("女") & height < 70) {
+                System.out.println("女生身高需大於70");
+            } else {
+                double stdWeightB = (height - 80)*0.7;
+                double stdWeightG = (height - 70)*0.6;
+                BigDecimal bigStdWeightB = (bigHeight.subtract(BigDecimal.valueOf(80))).multiply(BigDecimal.valueOf(0.7));
+                BigDecimal bigStdWeightG = (bigHeight.subtract(BigDecimal.valueOf(70))).multiply(BigDecimal.valueOf(0.6));;
 
-            double stdWeightB = (height - 80)*0.7;
-            double stdWeightG = (height - 70)*0.6;
-            BigDecimal bigStdWeightB = (bigHeight.subtract(BigDecimal.valueOf(80))).multiply(BigDecimal.valueOf(0.7));
-            BigDecimal bigStdWeightG = (bigHeight.subtract(BigDecimal.valueOf(70))).multiply(BigDecimal.valueOf(0.6));;
-
-            System.out.println(userGender.equals("男")? stdWeightB: stdWeightG);
-            System.out.println(userGender.equals("男")? bigStdWeightB: bigStdWeightG);
-
+                System.out.println(userGender.equals("男")? stdWeightB: stdWeightG);
+                System.out.println(userGender.equals("男")? bigStdWeightB: bigStdWeightG);
+            }
         }
     }
 
