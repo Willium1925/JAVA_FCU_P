@@ -1,13 +1,16 @@
 package com.lee.lesson_sample.basic;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class HomeWork_0306 {
     public static void main(String[] args) {
 
         //calculator();
-        calculator02();
+        //calculator02();
         //standardWeight();
+        standardWeight_useBigDecimal();
 
     }
 
@@ -17,6 +20,7 @@ public class HomeWork_0306 {
 
         System.out.println("請輸入第一個數字");
         double a = sc.nextDouble();
+        BigDecimal bigA = new BigDecimal(String.valueOf(a));
 
         System.out.println("請選擇運算（加減乘除）");
         String symbol = sc.next(); // 為何不適用nextLine()
@@ -24,32 +28,42 @@ public class HomeWork_0306 {
         System.out.println("請輸入第二個數字");
         //double b = sc.nextDouble();
         String bString = sc.next();
+        BigDecimal bigB = new BigDecimal(bString);
 
         double ans = 0;
+        //BigDecimal bigAns = new BigDecimal("0"); // BigDecimal要使用，每次都要創建的樣子？
 
         switch (symbol) {
             case "加", "+":
                 ans = a + Double.parseDouble(bString);
+                BigDecimal bigAnsAdd = bigA.add(bigB);
                 System.out.println(a + " + " + Double.parseDouble(bString) + " = " + ans);
+                System.out.println(bigA + " + " + bigB + " = " + bigAnsAdd);
                 break;
             case "減", "-":
                 ans = a - Double.parseDouble(bString);
+                BigDecimal bigAnsSub = bigA.subtract(bigB);
                 System.out.println(a + " - " + Double.parseDouble(bString) + " = " + ans);
+                System.out.println(bigA + " - " + bigB + " = " + bigAnsSub);
                 break;
             case "乘", "*", "x", "X":
                 ans = a*Double.parseDouble(bString);
+                BigDecimal bigAnsMul = bigA.multiply(bigB);
                 System.out.println(a + " x " + Double.parseDouble(bString) + " = " + ans);
+                System.out.println(bigA + " x " + bigB + " = " + bigAnsMul);
                 break;
             case "除", "÷", "/":
                 if (bString.equals("0")) {
                     System.out.println("除法中分母為零是無意義的");
                 } else {
                     ans = a/Double.parseDouble(bString);
+                    BigDecimal bigAnsDiv = bigA.divide(bigB, 5, RoundingMode.HALF_DOWN);
                     System.out.println( a + " ÷ " + Double.parseDouble(bString) + " = " + ans );
+                    System.out.println( bigA + " ÷ " + bigB + " = " + bigAnsDiv );
                 }
                 break;
             default:
-                System.out.println("請輸入正確算數要求");
+                System.out.println("請輸入正確算數符號");
         }
         sc.close();
     }
@@ -126,6 +140,31 @@ public class HomeWork_0306 {
 
     static void standardWeight_useBigDecimal() {
 
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("將計算標準體重，請輸入性別（男、女）");
+            String userGender = sc.next();
+            if (!userGender.equals("男") & !userGender.equals("女")) {
+                System.out.println("非常抱歉，請正確輸入生理性別");
+                //sc.next();
+                continue;
+            }
+
+            System.out.println("請輸入身高");
+            double height = sc.nextDouble();
+            BigDecimal bigHeight = new BigDecimal(height);
+
+            double stdWeightB = (height - 80)*0.7;
+            double stdWeightG = (height - 70)*0.6;
+            BigDecimal bigStdWeightB = (bigHeight.subtract(BigDecimal.valueOf(80))).multiply(BigDecimal.valueOf(0.7));
+            BigDecimal bigStdWeightG = (bigHeight.subtract(BigDecimal.valueOf(70))).multiply(BigDecimal.valueOf(0.6));;
+
+
+            System.out.println(userGender.equals("男")? stdWeightB: stdWeightG);
+            System.out.println(userGender.equals("男")? bigStdWeightB: bigStdWeightG);
+
+        }
     }
 
 }
