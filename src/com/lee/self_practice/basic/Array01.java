@@ -3,9 +3,29 @@ package com.lee.self_practice.basic;
 import java.util.Arrays; // 重要！
 
 public class Array01 {
+    // 來源
+    // https://yubin551.gitbook.io/java-note/basic_java_programming/datatype/array
+
     public static void main(String[] args) {
-        MemoryCheck();
-        ArrayMethods();
+
+        ImportantPleaseSee();
+//        MemoryCheck();
+//        ArrayMethods();
+
+    }
+
+    static void ImportantPleaseSee() {
+        int[] a = {10, 20, 30};
+        int[] b = {10, 20, 30};
+        int[] c = a;
+        a[0] = 999;
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(c));
+        // 參考資料型別跟基本資料型別最大不同
+        // 回想起stack和heap區儲存的差別
+        // int[] c = a; 這裏，指定運算，實際上是指定“指向的記憶體位置”，不像int c = a的結果等同是直接賦值
+        b = c;
+        System.out.println(Arrays.equals(a, b));
 
     }
 
