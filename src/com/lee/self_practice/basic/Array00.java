@@ -13,10 +13,14 @@ public class Array00 {
 //        }
 //
 //        // 宣告的同時給值
-//        int[] score02 = new int[] {33,66,99};
-//        for (int i = 0; i < score02.length; i++) {
-//            System.out.println(score02[i]);
-//        }
+        int[] score02 = new int[]{33, 66, 99};
+        for (int i = 0; i < score02.length; i++) {
+            System.out.println(score02[i]);
+        }
+        // 更簡潔的寫法for-each
+        for (int i : score02) {
+            System.out.println(i);
+        }
 
         // 輸入學生數，以及每個學生的成績，計算平均分數
         System.out.println("請輸入學生人數");
