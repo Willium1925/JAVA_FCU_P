@@ -19,13 +19,15 @@ public class Array01 {
         int[] b = {10, 20, 30};
         int[] c = a;
         a[0] = 999;
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(c));
         // 參考資料型別跟基本資料型別最大不同
         // 回想起stack和heap區儲存的差別
         // int[] c = a; 這裏，指定運算，實際上是指定“指向的記憶體位置”，不像int c = a的結果等同是直接賦值
         // 因此不論之後對a和c做任何操作，都是影響到heap中的同一物件
-        b = c;
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(c));
+
+        // 可以隨時更換指向，不用顧慮啥
+        b = c; // 註解看看下一行有何變化
         System.out.println(Arrays.equals(a, b));
 
     }
