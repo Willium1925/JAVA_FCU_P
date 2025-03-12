@@ -1,5 +1,8 @@
 package com.lee.self_practice.basic;
 
+import java.math.BigDecimal;
+import java.util.Scanner;
+
 public class Array02 {
     public static void main(String[] args) {
         // 6(x)，100/hr
@@ -31,14 +34,22 @@ public class Array02 {
     static void park02() {
         int[] chargeList = new int[]{100, 80, 50, 30};
         int[] hourList = new int[]{6, 4, 2, 0};
-        int hr = 1;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("輸入停車時數");
+        double hourD = sc.nextDouble();
+        // 可以，但能更簡潔
+        //BigDecimal hourBig = new BigDecimal(hourD).setScale(0, BigDecimal.ROUND_HALF_UP);
+        //int hr = Integer.parseInt(hourBig.toString());
+        int hourInt = (int)Math.round(hourD);
+
         int cost = 0;
         for (int i = 0; i <= hourList.length-1; i++) {
-            if (hr < hourList[i]) {
+            if (hourInt < hourList[i]) {
                 continue;
             }
-            cost = cost + (hr - hourList[i])*chargeList[i];
-            hr = hourList[i]; // 幹，太神啦，就這一行我想破頭
+            cost = cost + (hourInt - hourList[i])*chargeList[i];
+            hourInt = hourList[i]; // 幹，太神啦，就這一行我想破頭
         }
         System.out.println(cost);
     }
