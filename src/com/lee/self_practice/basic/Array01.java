@@ -1,6 +1,6 @@
 package com.lee.self_practice.basic;
 
-import java.util.Arrays; // 重要
+import java.util.Arrays; // 重要！
 
 public class Array01 {
     public static void main(String[] args) {
