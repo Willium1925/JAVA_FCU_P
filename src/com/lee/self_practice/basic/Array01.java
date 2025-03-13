@@ -52,7 +52,8 @@ public class Array01 {
         System.out.println(Arrays.toString(array01));
         System.out.println(Arrays.toString(arrayClo));
 
-        // 可以把陣列全部用value填滿，常用於陣列初始化。Arrays.fill(Object[],value)
+        // Arrays.fill(Object[],value)
+        // 可以把陣列全部用value填滿，常用於陣列初始化。
         int[] arrayFill = new int[10];
         System.out.println(Arrays.toString(arrayFill));
         Arrays.fill(arrayFill, -1);  // 以 -1 填滿 arrayFill
