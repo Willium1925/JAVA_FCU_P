@@ -2,7 +2,7 @@ package com.lee.self_practice.basic;
 
 import java.util.Arrays;
 
-public class Array04 {
+public class Array04_Dice {
     public static void main(String[] args) {
         // 模擬擲兩顆骰子，列出所有點數和的出現次數
         diceTest();
