@@ -18,6 +18,6 @@ public class Check_0609_CountEven {
             i++;
         }
         System.out.println(sum);
-        // 可以試試continue
+        // 用continue也行，是另一種思考方式，但這裡不太需要
     }
 }
