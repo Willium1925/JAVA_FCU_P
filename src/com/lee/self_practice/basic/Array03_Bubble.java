@@ -2,7 +2,7 @@ package com.lee.self_practice.basic;
 
 import java.util.Arrays;
 
-public class Array03 {
+public class Array03_Bubble {
     public static void main(String[] args) {
         //forEachTest();
         //bubbleTest();
