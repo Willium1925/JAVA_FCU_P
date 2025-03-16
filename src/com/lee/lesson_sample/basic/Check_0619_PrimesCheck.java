@@ -2,7 +2,7 @@ package com.lee.lesson_sample.basic;
 
 import java.util.Scanner;
 
-public class Check_0619_OddsCheck {
+public class Check_0619_PrimesCheck {
     public static void main(String[] args) {
         // 列出指定範圍內所有質數(只能被1和自己整除)
         //primesListTest();
