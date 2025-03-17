@@ -162,9 +162,9 @@ public class Check_0699_Final {
         */
         Scanner sc = new Scanner(System.in);
         System.out.println("請輸入密碼，4~8位，須包含數字和英文");
-        String password = sc.nextLine();
 
         while (true) {
+            String password = sc.nextLine();
             boolean longEnough = false;
             boolean hasNum = false;
             boolean hasEngBig = false;
@@ -209,19 +209,20 @@ public class Check_0699_Final {
                 System.out.println("密碼格式正確");
             } else {
                 System.out.println("請重新輸入");
-                sc.nextLine();
+                //sc.nextLine(); // 如果把password放進while迴圈哩，這段就不用打
+                // 但其實也必須把password放進while迴圈哩
+                // 若不放在迴圈裡，就無法更新每次重新輸入的密碼
                 continue;
             }
-            //System.out.println("請再次輸入密碼驗證");
-            //String passwordCheck = sc.nextLine();
-            //if (passwordCheck.equals(password)) {
-            //    System.out.println("驗證完了");
-            //    break;
-            //} else {
-            //    System.out.println("密碼不一致，請重新設定");
-            //    sc.nextLine();
-            //}
-
+            System.out.println("請再次輸入密碼驗證");
+            String passwordCheck = sc.nextLine();
+            if (passwordCheck.equals(password)) {
+                System.out.println("驗證完了，再見");
+                break;
+            } else {
+                System.out.println("密碼不一致，請重新設定");
+                //sc.nextLine();
+            }
         }
 
     }
