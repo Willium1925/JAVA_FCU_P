@@ -13,8 +13,9 @@ public class Check_0699_Final {
         // 用*輸出菱形
         //diamondWithStars();
         //diamondWithStarsAns();
-        diamondWithStarsAns02();
+        //diamondWithStarsAns02();
         // 密碼檢查程式
+        passwordCheck();
     }
 
     static void timeSumOfThree() {
@@ -160,19 +161,34 @@ public class Check_0699_Final {
         a~z 97~122
         */
         Scanner sc = new Scanner(System.in);
-        System.out.print("請輸入密碼，12位，須包含數字和英文");
+        System.out.println("請輸入密碼，12位，須包含數字和英文");
         String password = sc.nextLine();
-        boolean hasNum = true;
-        boolean hasEngBig = true;
-        boolean hasEngLittle = true;
+        boolean hasNum = false;
+        boolean hasEngBig = false;
+        boolean hasEngLittle = false;
 
         for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
-            if (c >= '0' ) {
-
+            if (c >= '0' && c <= '9') {
+                hasNum = true;
+            }
+            if (c >= 'A' && c <= 'Z') {
+                hasEngBig = true;
+            }
+            if (c >= 'z' && c <= 'z') {
+                hasEngLittle = true;
             }
         }
 
+        if (!hasNum) {
+            System.out.print("沒有數字!");
+        }
+        if (!hasEngBig) {
+            System.out.print("沒有大寫字母!");
+        }
+        if (!hasEngLittle) {
+            System.out.print("沒有小寫字母!");
+        }
 
     }
 }
