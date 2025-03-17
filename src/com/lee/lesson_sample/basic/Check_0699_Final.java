@@ -161,34 +161,56 @@ public class Check_0699_Final {
         a~z 97~122
         */
         Scanner sc = new Scanner(System.in);
-        System.out.println("請輸入密碼，12位，須包含數字和英文");
-        String password = sc.nextLine();
+        System.out.println("請輸入密碼，4~8位，須包含數字和英文");
+        boolean longEnough = false;
         boolean hasNum = false;
         boolean hasEngBig = false;
         boolean hasEngLittle = false;
+        boolean allGood = true;
 
-        for (int i = 0; i < password.length(); i++) {
-            char c = password.charAt(i);
-            if (c >= '0' && c <= '9') {
-                hasNum = true;
+        while (true) {
+            String password = sc.nextLine();
+            for (int i = 0; i < password.length(); i++) {
+                char c = password.charAt(i);
+                if (c >= '0' && c <= '9') {
+                    hasNum = true;
+                }
+                if (c >= 'A' && c <= 'Z') {
+                    hasEngBig = true;
+                }
+                if (c >= 'a' && c <= 'z') {
+                    hasEngLittle = true;
+                }
             }
-            if (c >= 'A' && c <= 'Z') {
-                hasEngBig = true;
+            if (password.length() >= 4 && password.length() <= 8) {
+                longEnough = true;
             }
-            if (c >= 'z' && c <= 'z') {
-                hasEngLittle = true;
+            System.out.println(hasNum);
+            System.out.println(hasEngBig);
+            System.out.println(hasEngLittle);
+            if (!hasNum) {
+                System.out.print("沒有數字!");
+                allGood = false;
             }
-        }
+            if (!hasEngBig) {
+                System.out.print("沒有大寫字母!");
+                allGood = false;
+            }
+            if (!hasEngLittle) {
+                System.out.print("沒有小寫字母!");
+                allGood = false;
+            }
+            if (!longEnough) {
+                System.out.println(password.length() <4? "太短了!": "太長了");
+                allGood = false;
+            }
+            if (allGood) {
+                System.out.println("密碼格式正確");
+                break;
+            } else {
+                System.out.println("請重新輸入");
 
-        if (!hasNum) {
-            System.out.print("沒有數字!");
+            }
         }
-        if (!hasEngBig) {
-            System.out.print("沒有大寫字母!");
-        }
-        if (!hasEngLittle) {
-            System.out.print("沒有小寫字母!");
-        }
-
     }
 }
