@@ -162,14 +162,15 @@ public class Check_0699_Final {
         */
         Scanner sc = new Scanner(System.in);
         System.out.println("請輸入密碼，4~8位，須包含數字和英文");
-        boolean longEnough = false;
-        boolean hasNum = false;
-        boolean hasEngBig = false;
-        boolean hasEngLittle = false;
-        boolean allGood = true;
+        String password = sc.nextLine();
 
         while (true) {
-            String password = sc.nextLine();
+            boolean longEnough = false;
+            boolean hasNum = false;
+            boolean hasEngBig = false;
+            boolean hasEngLittle = false;
+            boolean allGood = true;
+
             for (int i = 0; i < password.length(); i++) {
                 char c = password.charAt(i);
                 if (c >= '0' && c <= '9') {
@@ -206,11 +207,22 @@ public class Check_0699_Final {
             }
             if (allGood) {
                 System.out.println("密碼格式正確");
-                break;
             } else {
                 System.out.println("請重新輸入");
-
+                sc.nextLine();
+                continue;
             }
+            //System.out.println("請再次輸入密碼驗證");
+            //String passwordCheck = sc.nextLine();
+            //if (passwordCheck.equals(password)) {
+            //    System.out.println("驗證完了");
+            //    break;
+            //} else {
+            //    System.out.println("密碼不一致，請重新設定");
+            //    sc.nextLine();
+            //}
+
         }
+
     }
 }
