@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Chech_0606_CountOdd {
     public static void main(String[] args) {
-        // 指定範圍內所有基數總和，用while
+        // 指定範圍內所有奇數總和，用while
         oddTest();
     }
 
