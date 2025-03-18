@@ -164,19 +164,28 @@ public class Check_0699_Final {
         Scanner sc = new Scanner(System.in);
         System.out.println("請指定菱形高度");
         int height = sc.nextInt();
-
         for (int i = 1; i <= height; i++) {
             // left spaces
             for (int spaceL = 1; spaceL <= (height-i); spaceL++) {
                 System.out.print(" ");
             }
             // medium
-            for (int mediumm = 1; mediumm <= i+3; mediumm+=3) {
+            for (int mediumm = 1; mediumm <= 1+(i-1)*2; mediumm++) {
                 System.out.print("*");
             }
             System.out.println();
         }
-
+        for (int i = height-1; i >= 1; i--) {
+            // left spaces
+            for (int spaceL = 1; spaceL <= (height-i); spaceL++) {
+                System.out.print(" ");
+            }
+            // medium
+            for (int mediumm = 1; mediumm <= 1+(i-1)*2; mediumm++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     static void passwordCheck() {
