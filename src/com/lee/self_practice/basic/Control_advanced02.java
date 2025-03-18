@@ -17,7 +17,7 @@ public class Control_advanced02 {
             System.out.println("您所輸入的數字"+a+"不是質數");
         }else {
             boolean isPrime = true;  // 假設是質數
-            for(int i = 2 ; i < (a/2) ; i++) {
+            for(int i = 2 ; i < a ; i++) {
                 if(a%i==0) {
                     isPrime = false;  // 找到因數，則不是質數
                     System.out.println(i+"是因數，所以"+a+"不是質數");
