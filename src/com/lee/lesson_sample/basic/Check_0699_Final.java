@@ -14,7 +14,8 @@ public class Check_0699_Final {
         //diamondWithStars();
         //diamondWithStarsAns();
         //diamondWithStarsAns02();
-        diamondWithStarsMine();
+        //diamondWithStarsMine();
+        diamondWithStarsMine02();
         // 密碼檢查程式
         //passwordCheck();
         //passwordCheck02();
@@ -160,6 +161,7 @@ public class Check_0699_Final {
         }
     }
 
+    // 高度不等於星星數
     static void diamondWithStarsMine() {
         Scanner sc = new Scanner(System.in);
         System.out.println("請指定菱形高度");
@@ -186,6 +188,43 @@ public class Check_0699_Final {
             }
             System.out.println();
         }
+    }
+
+    // 高度等於星星數
+    static void diamondWithStarsMine02() {
+        int height = 5;
+        /*
+
+            x.   |   s4 x1
+           x x.  |   s3 x1 s1 x1
+          x x x. |   s2 x1 s1 x1 s1 x1
+         x x x x |.  s1
+        x x x x x|
+
+        */
+        for (int i = 1; i <= height; i++) {
+            // 左邊空格
+            for (int spa = 1; spa <= height-i; spa++) {
+                System.out.print(" ");
+            }
+            // 中間＊號
+            for (int s = 1; s <= i; s++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        for (int i = height-1; i >= 1; i--) {
+            // 左邊空格
+            for (int spa = 1; spa <= height-i; spa++) {
+                System.out.print(" ");
+            }
+            // 中間＊號
+            for (int s = 1; s <= i; s++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
     }
 
     static void passwordCheck() {
