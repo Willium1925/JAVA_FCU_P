@@ -9,7 +9,8 @@ public class Array02_ParkingCharge {
         // 4~6(o)，80/hr
         // 2~4(o)，50/hr
         // ~2(o)，30/hr
-        park02();
+        //park02();
+        park03();
     }
 
     static void park01() {
@@ -54,4 +55,23 @@ public class Array02_ParkingCharge {
         System.out.println(cost);
     }
 
+    static void park03() {
+        while (true) {
+            int[] hour = new int[]{0, 2, 4, 6};
+            int[] charge = new int[]{30, 50, 80, 100};
+            Scanner sc = new Scanner(System.in);
+            System.out.println("輸入停車時數");
+            float parkTimeOrg = sc.nextFloat();
+            int parkTime = Math.round(parkTimeOrg);
+            int cost = 0;
+
+            for (int i = 0; i < hour.length; i++) {
+                if (parkTime > hour[i]) {
+                    cost = cost + (parkTime-hour[i])*charge[i];
+                }
+            }
+            System.out.println("停車" + parkTimeOrg + "小時，總計費用" + cost + "元");
+        }
+
+    }
 }
