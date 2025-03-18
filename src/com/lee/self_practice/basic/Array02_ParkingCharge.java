@@ -67,15 +67,7 @@ public class Array02_ParkingCharge {
             int parkTime = Math.round(parkTimeOrg);
             int cost = 0;
 
-            for (int i = 0; i < hour.length; i++) {
-                if (parkTime > hour[i]) {
-                    cost = cost + (parkTime-hour[i])*charge[i];
-                    parkTime = parkTime ;
-                }
-            }
-            if (parkTime < 0) {
-                parkTime+=2;
-            }
+
             System.out.println("停車" + parkTimeOrg + "小時，總計費用" + cost + "元");
         }
 
