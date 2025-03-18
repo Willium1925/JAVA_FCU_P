@@ -14,9 +14,10 @@ public class Check_0699_Final {
         //diamondWithStars();
         //diamondWithStarsAns();
         //diamondWithStarsAns02();
+        diamondWithStarsMine();
         // 密碼檢查程式
         //passwordCheck();
-        passwordCheck02();
+        //passwordCheck02();
     }
 
     // 指定範圍內，指定數的所有倍數和
@@ -164,7 +165,17 @@ public class Check_0699_Final {
         System.out.println("請指定菱形高度");
         int height = sc.nextInt();
 
-
+        for (int i = 1; i <= height; i++) {
+            // left spaces
+            for (int spaceL = 1; spaceL <= (height-i); spaceL++) {
+                System.out.print(" ");
+            }
+            // medium
+            for (int mediumm = 1; mediumm <= i+3; mediumm+=3) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
 
     }
 
@@ -302,15 +313,23 @@ public class Check_0699_Final {
                 continue;
             }
             System.out.println("請再次輸入密碼驗證");
-            String passwordCheck = sc.nextLine();
-            if (!passwordCheck.equals(password)) {
-                System.out.println("驗證完了，再見");
+            int count = 1;
+            //boolean match = passwordCheck.equals(password);
+            while (count <= 3) {
+                String passwordCheck = sc.nextLine();
+                if (passwordCheck.equals(password)) {
+                    System.out.println("驗證成功，再見!");
+                    break;
+                } else {
+                    System.out.println("密碼不一致!");
+                    count++;
+                }
+            }
+            if (count == 1) {
                 break;
             } else {
-                System.out.println("密碼不一致，請重新設定");
-                //sc.nextLine();
+                System.out.println("錯誤三次，請重新設定密碼");
             }
         }
-
     }
 }
