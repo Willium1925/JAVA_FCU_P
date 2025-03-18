@@ -5,8 +5,11 @@ import java.util.Scanner;
 public class Control_advanced02 {
 
     public static void main(String[] args) {
-        /*
         // 判斷質數，輸入 n，判斷 n 是否為質數（只能被 1 和 自己 整除）。
+        isPrime();
+    }
+
+    static void isPrime() {
         System.out.println("請輸入一個正整數");
         Scanner s = new Scanner(System.in);
         int a = s.nextInt();
@@ -29,12 +32,13 @@ public class Control_advanced02 {
             }
         }
         s.close();
+    }
+
+    // 費氏數列（Fibonacci)，輸入一個數 n，印出前 n 個費氏數列數字（Fibonacci: 0, 1, 1, 2, 3, 5, 8, ...）。
+    static void fibonacci() {
 
     }
-    */
 
-
-        // 費氏數列（Fibonacci)，輸入一個數 n，印出前 n 個費氏數列數字（Fibonacci: 0, 1, 1, 2, 3, 5, 8, ...）。
 
 //        int a0 = 0;
 //        int a1 = 1;
@@ -100,8 +104,8 @@ public class Control_advanced02 {
 //            System.out.println(userInsert.equals("end"));
 //        }
 
-        System.out.println("請指定星星數量");
-        Scanner s = new Scanner(System.in);
+//        System.out.println("請指定星星數量");
+//        Scanner s = new Scanner(System.in);
 /*
         while (true) {
 
@@ -132,5 +136,5 @@ public class Control_advanced02 {
         }
         */
 
-    }
+
 }

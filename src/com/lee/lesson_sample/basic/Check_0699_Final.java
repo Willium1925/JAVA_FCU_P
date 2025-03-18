@@ -13,11 +13,12 @@ public class Check_0699_Final {
         // 用*輸出菱形
         //diamondWithStars();
         //diamondWithStarsAns();
-        //diamondWithStarsAns02();
+        diamondWithStarsAns02();
         // 密碼檢查程式
-        passwordCheck();
+        //passwordCheck();
     }
 
+    // 指定範圍內，指定數的所有倍數和
     static void timeSumOfThree() {
         Scanner sc = new Scanner(System.in);
         System.out.println("請輸入數字，將計算該數所有倍數之和");
@@ -31,6 +32,7 @@ public class Check_0699_Final {
         System.out.println("0到" + max + "所有" + num + "的倍數，其總和為:" + sum);
     }
 
+    // 計算指定兩數間所有整數之和
     static void sumBetween() {
         Scanner sc = new Scanner(System.in);
         System.out.println("將計算指定兩數間所有整數之和");
@@ -48,6 +50,7 @@ public class Check_0699_Final {
         System.out.println(min + "到" + max + "之間所有整數之和為:" + sum02);
     }
 
+    // 輸出指定空心長方形
     static void rectangleWithStars() {
         int heigh = 5;
         int wideth = 10;
@@ -67,6 +70,7 @@ public class Check_0699_Final {
         }
     }
 
+    // 輸出菱形
     static void diamondWithStars() {
     /*
        x    4
@@ -115,41 +119,41 @@ public class Check_0699_Final {
     }
 
     static void diamondWithStarsAns02() {
-        int num = 5;//行数
-        //打印上半部分菱形，外层循环控制行
+        int num = 5;// 行数
+        // 上半部分菱形，外層循環控制
         for (int i = 1; i <= num; i++) {
-            //内层循环控制列
-            //填充空白格
+            // 内層循環控制
+            // 填充空白格
             for (int j = 1; j <= num - i; j++) {
                 System.out.print(" ");
             }
-            //三角形中心列及左半边
+            // 三角形中心列及左半邊
             for (int k = 1; k <= i; k++) {
-                System.out.print(k);//输出符号时此括号填指定符号
+                System.out.print(k); // 輸出
             }
-            //三角形右半边
+            // 三角形右半邊
             for (int n = i - 1; n >= 1; n--) {
-                System.out.print(n);//输出符号填符号
+                System.out.print(n); // 輸出
             }
-            //换行
+            // 換行
             System.out.println();
         }
-        //打印下半部分菱形，外层循环控制行
+        // 下半部分菱形，外層循環控制
         for (int i = 1; i < num; i++) {
-            //内层循环控制列
-            //填充空白格
+            // 内層循環控制
+            // 填充空白格
             for (int j = 1; j <= i; j++) {
                 System.out.print(" ");
             }
-            //三角形中心列及左半边
+            // 三角形中心列及左半邊
             for (int k = 1; k <= num - i; k++) {
-                System.out.print(k);//输出符号填符号
+                System.out.print(k); // 輸出
             }
-            //三角形右半边
+            // 三角形右半邊
             for (int n = num - 1 - i; n > 0; n--) {
-                System.out.print(n);//输出符号填符号
+                System.out.print(n); // 輸出
             }
-            //换行
+            // 換行
             System.out.println();
         }
     }

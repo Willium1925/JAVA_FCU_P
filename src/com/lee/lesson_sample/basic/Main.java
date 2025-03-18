@@ -20,7 +20,8 @@ public class Main {
 //        System.out.println("l = " + l);
 
         //ifTest();
-        ifTest02();
+        //ifTest02();
+        testCheck();
     }
 
     static void ifTest() {
@@ -47,6 +48,12 @@ public class Main {
             System.out.println(score + "分是D等");
         } else {
             System.out.println("不及格！");
+        }
+    }
+
+    static void testCheck() {
+        for (;;) {
+            System.out.println("0");
         }
     }
 }
