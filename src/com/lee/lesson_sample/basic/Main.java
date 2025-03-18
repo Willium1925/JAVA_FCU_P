@@ -21,7 +21,8 @@ public class Main {
 
         //ifTest();
         //ifTest02();
-        testCheck();
+//        testCheck();
+        testString();
     }
 
     static void ifTest() {
@@ -56,5 +57,11 @@ public class Main {
         for (;i == 5; i++) {
             System.out.println("0");
         }
+    }
+
+    static void testString() {
+        int a = 1;
+        int b = 2;
+        System.out.println(a+"1"+b);
     }
 }
