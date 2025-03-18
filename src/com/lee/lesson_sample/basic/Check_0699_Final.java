@@ -13,9 +13,10 @@ public class Check_0699_Final {
         // 用*輸出菱形
         //diamondWithStars();
         //diamondWithStarsAns();
-        diamondWithStarsAns02();
+        //diamondWithStarsAns02();
         // 密碼檢查程式
         //passwordCheck();
+        passwordCheck02();
     }
 
     // 指定範圍內，指定數的所有倍數和
@@ -158,6 +159,15 @@ public class Check_0699_Final {
         }
     }
 
+    static void diamondWithStarsMine() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("請指定菱形高度");
+        int height = sc.nextInt();
+
+
+
+    }
+
     static void passwordCheck() {
         /*
         0~9 48~57
@@ -221,6 +231,79 @@ public class Check_0699_Final {
             System.out.println("請再次輸入密碼驗證");
             String passwordCheck = sc.nextLine();
             if (passwordCheck.equals(password)) {
+                System.out.println("驗證完了，再見");
+                break;
+            } else {
+                System.out.println("密碼不一致，請重新設定");
+                //sc.nextLine();
+            }
+        }
+
+    }
+
+    static void passwordCheck02() {
+        /*
+        0~9 48~57
+        A~Z 65~90
+        a~z 97~122
+        */
+        Scanner sc = new Scanner(System.in);
+        System.out.println("請輸入密碼，4~8位，須包含數字和英文");
+
+        while (true) {
+            String password = sc.nextLine();
+            boolean longEnough = false;
+            boolean hasNum = false;
+            boolean hasEngBig = false;
+            boolean hasEngLittle = false;
+            boolean allGood = true;
+
+            for (int i = 0; i < password.length(); i++) {
+                char c = password.charAt(i);
+                if (c >= '0' && c <= '9') {
+                    hasNum = true;
+                }
+                if (c >= 'A' && c <= 'Z') {
+                    hasEngBig = true;
+                }
+                if (c >= 'a' && c <= 'z') {
+                    hasEngLittle = true;
+                }
+            }
+            if (password.length() >= 4 && password.length() <= 8) {
+                longEnough = true;
+            }
+            System.out.println(hasNum);
+            System.out.println(hasEngBig);
+            System.out.println(hasEngLittle);
+            if (!hasNum) {
+                System.out.print("沒有數字!");
+                allGood = false;
+            }
+            if (!hasEngBig) {
+                System.out.print("沒有大寫字母!");
+                allGood = false;
+            }
+            if (!hasEngLittle) {
+                System.out.print("沒有小寫字母!");
+                allGood = false;
+            }
+            if (!longEnough) {
+                System.out.println(password.length() <4? "太短了!": "太長了");
+                allGood = false;
+            }
+            if (allGood) {
+                System.out.println("密碼格式正確");
+            } else {
+                System.out.println("請重新輸入");
+                //sc.nextLine(); // 如果把password放進while迴圈哩，這段就不用打
+                // 但其實也必須把password放進while迴圈哩
+                // 若不放在迴圈裡，就無法更新每次重新輸入的密碼
+                continue;
+            }
+            System.out.println("請再次輸入密碼驗證");
+            String passwordCheck = sc.nextLine();
+            if (!passwordCheck.equals(password)) {
                 System.out.println("驗證完了，再見");
                 break;
             } else {

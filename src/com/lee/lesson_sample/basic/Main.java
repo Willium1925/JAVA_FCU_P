@@ -52,7 +52,8 @@ public class Main {
     }
 
     static void testCheck() {
-        for (;;) {
+        int i = 5;
+        for (;i == 5; i++) {
             System.out.println("0");
         }
     }
