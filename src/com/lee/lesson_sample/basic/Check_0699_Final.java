@@ -15,10 +15,10 @@ public class Check_0699_Final {
         //diamondWithStarsAns();
         //diamondWithStarsAns02();
         //diamondWithStarsMine();
-        diamondWithStarsMine02();
+        //diamondWithStarsMine02();
         // 密碼檢查程式
         //passwordCheck();
-        //passwordCheck02();
+        passwordCheck02();
     }
 
     // 指定範圍內，指定數的所有倍數和
@@ -365,18 +365,19 @@ public class Check_0699_Final {
             }
             System.out.println("請再次輸入密碼驗證");
             int count = 1;
-            //boolean match = passwordCheck.equals(password);
+            boolean isMatch = false;
             while (count <= 3) {
                 String passwordCheck = sc.nextLine();
                 if (passwordCheck.equals(password)) {
                     System.out.println("驗證成功，再見!");
+                    isMatch = true;
                     break;
                 } else {
                     System.out.println("密碼不一致!");
                     count++;
                 }
             }
-            if (count == 1) {
+            if (isMatch) {
                 break;
             } else {
                 System.out.println("錯誤三次，請重新設定密碼");
