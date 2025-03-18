@@ -7,11 +7,9 @@ public class Array01 {
     // https://yubin551.gitbook.io/java-note/basic_java_programming/datatype/array
 
     public static void main(String[] args) {
-
         ImportantPleaseSee();
 //        MemoryCheck();
 //        ArrayMethods();
-
     }
 
     static void ImportantPleaseSee() {
@@ -21,7 +19,7 @@ public class Array01 {
         a[0] = 999;
         // 參考資料型別跟基本資料型別最大不同
         // 回想起stack和heap區儲存的差別
-        // int[] c = a; 這裏，指定運算，實際上是指定“指向的記憶體位置”，不像int c = a的結果等同是直接賦值
+        // int[] c = a; 這裏，指定運算aka賦值，實際上是給予“指向的記憶體位置”，不像int c = a的結果等同是直接賦值
         // 因此不論之後對a和c做任何操作，都是影響到heap中的同一物件
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(c));
@@ -29,7 +27,6 @@ public class Array01 {
         // 可以隨時更換指向，不用顧慮啥
         b = c; // 註解看看下一行有何變化
         System.out.println(Arrays.equals(a, b));
-
     }
 
     static  void MemoryCheck() {
