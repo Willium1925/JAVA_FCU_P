@@ -201,7 +201,8 @@ public class Check_0699_Final {
         x x x x x|
 
         */
-        int height = 5;
+        Scanner sc = new Scanner(System.in);
+        int height = sc.nextInt();
         for (int i = 1; i <= height; i++) {
             // 左邊空格
             for (int spa = 1; spa <= height-i; spa++) {
