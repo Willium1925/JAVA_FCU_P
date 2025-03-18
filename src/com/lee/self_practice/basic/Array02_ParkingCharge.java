@@ -1,10 +1,10 @@
 package com.lee.self_practice.basic;
 
-import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class Array02 {
+public class Array02_ParkingCharge {
     public static void main(String[] args) {
+        // 停車級距收費
         // 6(x)，100/hr
         // 4~6(o)，80/hr
         // 2~4(o)，50/hr
