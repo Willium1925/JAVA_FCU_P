@@ -192,7 +192,6 @@ public class Check_0699_Final {
 
     // 高度等於星星數
     static void diamondWithStarsMine02() {
-        int height = 5;
         /*
 
             x.   |   s4 x1
@@ -202,6 +201,7 @@ public class Check_0699_Final {
         x x x x x|
 
         */
+        int height = 5;
         for (int i = 1; i <= height; i++) {
             // 左邊空格
             for (int spa = 1; spa <= height-i; spa++) {
