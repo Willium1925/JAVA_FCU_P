@@ -172,7 +172,7 @@ public class Check_0699_Final {
             }
             // medium
             for (int mediumm = 1; mediumm <= i+3; mediumm+=3) {
-                System.out.print("*");
+                System.out.print("*12");
             }
             System.out.println();
         }
