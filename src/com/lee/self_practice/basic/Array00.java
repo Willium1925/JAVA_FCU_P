@@ -4,24 +4,32 @@ import java.util.Scanner;
 
 public class Array00 {
     public static void main(String[] args) {
-//        // 宣告後再給值，常搭配for迴圈使用
-//        int[] score = new int[5];
-//        System.out.println("整數陣列score[]的長度為" + score.length);
-//        for (int i = 0; i <score.length; i++) {
-//            score[i] = i+7;
-//            System.out.println("score[" + i + "]的值為" +score[i]);
-//        }
-//
-//        // 宣告的同時給值
+        basicTest();
+        basicTest02();
+    }
+
+    static void basicTest() {
+        // 宣告後再給值，常搭配for迴圈使用
+        int[] score = new int[5];
+        System.out.println("整數陣列score[]的長度為" + score.length);
+        for (int i = 0; i <score.length; i++) {
+            score[i] = i+7;
+            System.out.println("score[" + i + "]的值為" +score[i]);
+        }
+
+        // 宣告的同時給值
         int[] score02 = new int[]{33, 66, 99};
         for (int i = 0; i < score02.length; i++) {
             System.out.println(score02[i]);
         }
+
         // 更簡潔的寫法for-each
         for (int i : score02) {
             System.out.println(i);
         }
+    }
 
+    static void basicTest02() {
         // 輸入學生數，以及每個學生的成績，計算平均分數
         System.out.println("請輸入學生人數");
         Scanner sc = new Scanner(System.in);
