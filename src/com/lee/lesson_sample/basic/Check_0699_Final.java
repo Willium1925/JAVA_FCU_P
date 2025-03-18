@@ -227,6 +227,7 @@ public class Check_0699_Final {
 
     }
 
+    // 密碼驗證，4~8位，須包含數字和英文
     static void passwordCheck() {
         /*
         0~9 48~57
@@ -300,6 +301,7 @@ public class Check_0699_Final {
 
     }
 
+    // 密碼驗證，4~8位，須包含數字和英文，最後重複輸入驗證（３次幾會）
     static void passwordCheck02() {
         /*
         0~9 48~57
