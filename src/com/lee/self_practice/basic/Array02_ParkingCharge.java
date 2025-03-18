@@ -9,8 +9,8 @@ public class Array02_ParkingCharge {
         // 4~6(o)，80/hr
         // 2~4(o)，50/hr
         // ~2(o)，30/hr
-        //park02();
-        park03();
+        park02();
+        //park03();
     }
 
     static void park01() {
@@ -36,23 +36,25 @@ public class Array02_ParkingCharge {
         int[] chargeList = new int[]{100, 80, 50, 30};
         int[] hourList = new int[]{6, 4, 2, 0};
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("輸入停車時數");
-        double hourD = sc.nextDouble();
-        // 可以，但能更簡潔
-        //BigDecimal hourBig = new BigDecimal(hourD).setScale(0, BigDecimal.ROUND_HALF_UP);
-        //int hr = Integer.parseInt(hourBig.toString());
-        int hourInt = (int)Math.round(hourD);
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("輸入停車時數");
+            double hourD = sc.nextDouble();
+            // 可以，但能更簡潔
+            //BigDecimal hourBig = new BigDecimal(hourD).setScale(0, BigDecimal.ROUND_HALF_UP);
+            //int hr = Integer.parseInt(hourBig.toString());
+            int hourInt = (int)Math.round(hourD);
 
-        int cost = 0;
-        for (int i = 0; i <= hourList.length-1; i++) {
-            if (hourInt < hourList[i]) {
-                continue;
+            int cost = 0;
+            for (int i = 0; i <= hourList.length-1; i++) {
+                if (hourInt < hourList[i]) {
+                    continue;
+                }
+                cost = cost + (hourInt - hourList[i])*chargeList[i];
+                hourInt = hourList[i]; // 幹，太神啦，就這一行我想破頭
             }
-            cost = cost + (hourInt - hourList[i])*chargeList[i];
-            hourInt = hourList[i]; // 幹，太神啦，就這一行我想破頭
+            System.out.println(cost);
         }
-        System.out.println(cost);
     }
 
     static void park03() {
@@ -68,7 +70,11 @@ public class Array02_ParkingCharge {
             for (int i = 0; i < hour.length; i++) {
                 if (parkTime > hour[i]) {
                     cost = cost + (parkTime-hour[i])*charge[i];
+                    parkTime = parkTime ;
                 }
+            }
+            if (parkTime < 0) {
+                parkTime+=2;
             }
             System.out.println("停車" + parkTimeOrg + "小時，總計費用" + cost + "元");
         }
