@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class Array04_Dice {
     public static void main(String[] args) {
         // 模擬擲兩顆骰子，列出所有點數和的出現次數
-        diceTest();
+        //diceTest();
         diceTest02();
+        diceCheck();
     }
 
     static void diceTest() { // 可行，只是可以更好
@@ -37,6 +38,24 @@ public class Array04_Dice {
             for (int j = 1; j <= 6; j++) { // 骰子二
                 // i+j-2 剛好就能對應索引值
                 sumCount[i+j-2]++;
+            }
+        }
+        System.out.println(Arrays.toString(sumCount));
+    }
+
+    static void diceCheck() {
+        int[] dice01 = new int[]{1, 2, 3, 4, 5, 6};
+        int[] dice02 = dice01.clone();
+        int[] sum = new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[] sumCount = new int[11];
+
+        for (int i: dice01) {
+            for (int j:dice02) {
+                for (int s: sum) {
+                    if (i+j == s) {
+                        sumCount[s-2]++;
+                    }
+                }
             }
         }
         System.out.println(Arrays.toString(sumCount));
