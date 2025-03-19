@@ -127,11 +127,13 @@ public class Check_0799_Final {
         int[] a = new int[]{45, 27, 93, 14, 65};
         System.out.println(Arrays.toString(a));
         int[] b = new int[]{4, 2, 0, 1, 3};
+        int[] temp = new int[a.length];
+        int j = 0;
         for (int i: a) {
-            for (int j = 0; j < b.length; j++) {
-                a[b[j]] = i;
-            }
+           temp[j] = a[b[j]];
+           j++;
         }
+        a = temp;
         System.out.println(Arrays.toString(a));
     }
 }
