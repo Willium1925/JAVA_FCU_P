@@ -252,19 +252,32 @@ public class Check_0799_Final {
                 count++;
             }
         }
-        BigDecimal[] insert = new BigDecimal[count];
         // 這裡若添加1，意思是"分成一個"，若是2，意思是"分成二個"
         // 寫1等於沒意義，因為分成一個等於不用分
         // 所以要碼正確輸入要java分的等分要求，例如我這裡就應該是count，不然就別寫，等同有遇到空白就分
         // 啊如果改成\\s+，遇到多長的空白和tab都視為一個分隔，更安全，避免使用者輸入多個空白
         //String[] str = strAllInsert.trim().split("\\s", 1);
-        String[] str = strAllInsert.trim().split("\\s");
+        String[] strAllInsertArray = strAllInsert.trim().split("\\s+");
+        BigDecimal[] bigInsertArray = new BigDecimal[strAllInsertArray.length];
 
-        System.out.println(Arrays.toString(str));
+        for (int i = 0; i < strAllInsertArray.length; i++) {
+            bigInsertArray[i] = new BigDecimal(strAllInsertArray[i]);
+        }
 
+        System.out.println("總輸入轉成的字串陣列:" + "\n"+ Arrays.toString(strAllInsertArray));
+        System.out.println("字串陣列再轉成BIG陣列:" + "\n"+ Arrays.toString(bigInsertArray));
 
-
-
+        // 將得到的BigDecimal陣列行泡沫排序
+        for (int i =0; i < bigInsertArray.length-1; i++) {
+            for (int j = 0; j < bigInsertArray.length-1-i; j++) {
+                if (bigInsertArray[j].compareTo(bigInsertArray[j+1]) == 1) {
+                    BigDecimal temp = bigInsertArray[j];
+                    bigInsertArray[j] = bigInsertArray[j+1];
+                    bigInsertArray[j+1] = temp;
+                }
+            }
+        }
+        System.out.println("最終完成排序的BIG陣列:" + "\n"+ Arrays.toString(bigInsertArray));
     }
 
     // 輸入任意陣列，找出陣列中是否有元素質等於該元素的索引值
