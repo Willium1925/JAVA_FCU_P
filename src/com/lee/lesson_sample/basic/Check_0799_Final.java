@@ -1,6 +1,7 @@
 package com.lee.lesson_sample.basic;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Check_0799_Final {
     public static void main(String[] args) {
@@ -8,7 +9,8 @@ public class Check_0799_Final {
         //reverseTest();
         //exchanging();
         //exchanging02();
-        exchanging03();
+        //exchanging03();
+        isPrimeReview();
     }
 
     // 擲三個骰子，統計各種點數和出現的機率
@@ -136,4 +138,45 @@ public class Check_0799_Final {
         a = temp;
         System.out.println(Arrays.toString(a));
     }
+
+    static void isPrimeReview() {
+        int max = 20;
+        for (int i = 2; i <= max; i++) { // 要被檢查的數字們
+            boolean isPrime = true;
+            for (int j = 2; j*j < i; j++) { // 拿來除的數字們
+                if (i == 2) {
+                    break;
+                }
+                if (i%j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    // 透過索引碼代表實際數字，列出指定範圍內的所有質數
+    static void isPrimeWithArrays() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("請指定數字，將列出1至該數內所有質數");
+
+        int max = sc.nextInt();
+        boolean[] isPrimeArray = new boolean[max+1]; // 輸入5，索引碼是01234，對使用者來說會無法檢測到5
+
+        System.out.println(Arrays.toString(isPrimeArray));
+
+        Arrays.fill(isPrimeArray, true); // 先假設都是質數
+
+        System.out.println(Arrays.toString(isPrimeArray));
+
+        for (int i = 2; i <= isPrimeArray.length; i++) {
+            isPrimeArray[i] = false;
+        }
+
+    }
+
+
 }
