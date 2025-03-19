@@ -10,7 +10,9 @@ public class Check_0799_Final {
         //exchanging();
         //exchanging02();
         //exchanging03();
-        isPrimeReview();
+        //isPrimeReview();
+        //isPrimeWithArrays();
+        isPrimeWithArraysAns();
     }
 
     // 擲三個骰子，統計各種點數和出現的機率
@@ -166,16 +168,48 @@ public class Check_0799_Final {
         int max = sc.nextInt();
         boolean[] isPrimeArray = new boolean[max+1]; // 輸入5，索引碼是01234，對使用者來說會無法檢測到5
 
-        System.out.println(Arrays.toString(isPrimeArray));
-
         Arrays.fill(isPrimeArray, true); // 先假設都是質數
 
-        System.out.println(Arrays.toString(isPrimeArray));
 
         for (int i = 2; i <= isPrimeArray.length; i++) {
-            isPrimeArray[i] = false;
+            for (int j = 2; j*i < max; j++) {
+                isPrimeArray[i*j] = false;
+            }
+            if (isPrimeArray[i]) {
+                System.out.println(i);
+            }
         }
 
+    }
+
+    static void isPrimeWithArraysAns() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("請指定數字，將列出 1 至該數內所有質數：");
+        int max = sc.nextInt();
+
+        boolean[] isPrimeArray = new boolean[max + 1]; // 索引代表實際數字，從 0 到 max
+        Arrays.fill(isPrimeArray, true); // 全部先假設是質數
+
+        // 0 和 1 不是質數，先標成 false
+        isPrimeArray[0] = false;
+        isPrimeArray[1] = false;
+
+        // 篩法主體邏輯
+        for (int i = 2; i * i <= max; i++) {
+            if (isPrimeArray[i]) {
+                // 將 i 的倍數全部標成 false
+                for (int j = i * i; j <= max; j += i) {
+                    isPrimeArray[j] = false;
+                }
+            }
+        }
+
+        // 印出所有是 true 的索引（就是質數）
+        for (int i = 2; i <= max; i++) {
+            if (isPrimeArray[i]) {
+                System.out.println(i);
+            }
+        }
     }
 
 
