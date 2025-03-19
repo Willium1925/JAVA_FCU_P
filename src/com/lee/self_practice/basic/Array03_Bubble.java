@@ -7,7 +7,8 @@ public class Array03_Bubble {
         //forEachTest();
         //bubbleTest();
         //bubbleTest02();
-        bubbleTest03();
+        //bubbleTest03();
+        bubbleCheck();
     }
 
     static  void forEachTest() {
@@ -65,6 +66,27 @@ public class Array03_Bubble {
             System.out.println("這是第" + count + "次排列："+ Arrays.toString(temp));
             count++;
         }
+    }
+
+    static void bubbleCheck() {
+        //4321
+        //3214
+        //2134
+        //1234
+        int count = 0;
+        int[] num = new int[]{40, 30, 20, 10};
+        for (int i = 0; i < num.length; i++) {
+            for (int j = 0; j < num.length-1; j++) {
+                if (num[j] > num[j+1]) {
+                    int tempBig = num[j];
+                    num[j] = num[j+1];
+                    num[j+1] = tempBig;
+                }
+            }
+            count++;
+            System.out.println("第" + count + "次排序：" + Arrays.toString(num));
+        }
+
     }
 
 }
