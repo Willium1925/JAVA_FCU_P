@@ -230,15 +230,40 @@ public class Check_0799_Final {
 
     // 輸入任意個數的數值，排序這些數
     static void problem08() {
-        BigDecimal a = new BigDecimal(10);
-        BigDecimal b = new BigDecimal(20);
-        BigDecimal c = new BigDecimal(10);
-        System.out.println(a.compareTo(b)); // 當前對象a < 參考對象b，會輸出 -1
-        System.out.println(b.compareTo(a)); // 當前對象b > 參考對象a，會輸出  1
-        System.out.println(a.compareTo(c)); // 當前對象a = 參考對象c，會輸出  0
+        //BigDecimal a = new BigDecimal(10);
+        //BigDecimal b = new BigDecimal(20);
+        //BigDecimal c = new BigDecimal(10);
+        //System.out.println(a.compareTo(b)); // 當前對象a < 參考對象b，會輸出 -1
+        //System.out.println(b.compareTo(a)); // 當前對象b > 參考對象a，會輸出  1
+        //System.out.println(a.compareTo(c)); // 當前對象a = 參考對象c，會輸出  0
 
-        //Scanner sc = new Scanner(System.in);
-        //String str = sc.next();
+        int count = 0;
+        String strAllInsert = " ";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("請輸入任意個數之數字，輸入end結束輸入");
+
+        while (true) {
+            System.out.println("請輸入第" + (count+1) + "個數");
+            String strInsert = sc.next();
+            if (strInsert.equals("end")) {
+                break;
+            } else {
+                strAllInsert = strAllInsert + strInsert + " ";
+                count++;
+            }
+        }
+        BigDecimal[] insert = new BigDecimal[count];
+        // 這裡若添加1，意思是"分成一個"，若是2，意思是"分成二個"
+        // 寫1等於沒意義，因為分成一個等於不用分
+        // 所以要碼正確輸入要java分的等分要求，例如我這裡就應該是count，不然就別寫，等同有遇到空白就分
+        // 啊如果改成\\s+，遇到多長的空白和tab都視為一個分隔，更安全，避免使用者輸入多個空白
+        //String[] str = strAllInsert.trim().split("\\s", 1);
+        String[] str = strAllInsert.trim().split("\\s");
+
+        System.out.println(Arrays.toString(str));
+
+
+
 
     }
 
