@@ -227,10 +227,21 @@ public class Check_0799_Final {
         }
     }
 
-
-
     // 輸入任意陣列，找出陣列中是否有元素質等於該元素的索引值
     static void problem09() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("請輸入數個任意內容，每次輸入完請enter，輸入end結束輸入");
+        StringBuilder strInsertAll = new StringBuilder("");
+        int count = 1;
+        while (true) {
+            String strInsert = sc.nextLine();
+            if (strInsert.equals("end")) {
+                break;
+            } else {
+                strInsertAll = strInsertAll.append(strInsert).append("");
+            }
+
+        }
 
     }
 
