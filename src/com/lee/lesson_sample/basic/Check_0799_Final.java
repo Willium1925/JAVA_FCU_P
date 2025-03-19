@@ -1,5 +1,6 @@
 package com.lee.lesson_sample.basic;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,7 +13,8 @@ public class Check_0799_Final {
         //exchanging03();
         //isPrimeReview();
         //isPrimeWithArrays();
-        isPrimeWithArraysAns();
+        //isPrimeWithArraysAns();
+        problem08();
     }
 
     // 擲三個骰子，統計各種點數和出現的機率
@@ -170,6 +172,20 @@ public class Check_0799_Final {
 
         Arrays.fill(isPrimeArray, true); // 先假設都是質數
 
+        // 假設到50
+        //2 4 6 8 10 12 14...2*24 2*25
+        //3 6 9 12...3*15 3*16
+        //4 8 12...4*11 4*12
+        //
+        //48*1
+        //49*1
+        //50*1
+
+        //for (int x = 2; x*x < max; x++) {
+        //    for (int y = 2; )
+        //    isPrimeArray[]
+        //}
+
 
         for (int i = 2; i <= isPrimeArray.length; i++) {
             for (int j = 2; j*i < max; j++) {
@@ -210,6 +226,25 @@ public class Check_0799_Final {
                 System.out.println(i);
             }
         }
+    }
+
+    // 輸入任意個數的數值，排序這些數
+    static void problem08() {
+        BigDecimal a = new BigDecimal(10);
+        BigDecimal b = new BigDecimal(20);
+        BigDecimal c = new BigDecimal(10);
+        System.out.println(a.compareTo(b)); // 當前對象a < 參考對象b，會輸出 -1
+        System.out.println(b.compareTo(a)); // 當前對象b > 參考對象a，會輸出  1
+        System.out.println(a.compareTo(c)); // 當前對象a = 參考對象c，會輸出  0
+
+        //Scanner sc = new Scanner(System.in);
+        //String str = sc.next();
+
+    }
+
+    // 輸入任意陣列，找出陣列中是否有元素質等於該元素的索引值
+    static void problem09() {
+
     }
 
 
