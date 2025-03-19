@@ -7,7 +7,8 @@ public class Check_0799_Final {
         //diceTestThree();
         //reverseTest();
         //exchanging();
-        exchanging02();
+        //exchanging02();
+        exchanging03();
     }
 
     // 擲三個骰子，統計各種點數和出現的機率
@@ -17,19 +18,19 @@ public class Check_0799_Final {
         for (int i = 1; i <= 6; i++) {
             for (int j = 1; j <= 6; j++) {
                 for (int k = 1; k <= 6; k++) {
-                    sumCount[i+j+k-3]++;
+                    sumCount[i + j + k - 3]++;
                 }
             }
         }
-        for (int s: sumCount) {
+        for (int s : sumCount) {
             System.out.println(s);
         }
         // 非常重要！！！！！常常呼略！！！！
         // 整數除以整數，回想起來，會得到什麼？
         // 沒錯！！！整數！！！而且小數點全部省略！！！！！
         // 所以下面這段全部無駄だ!!!!!!!!!
-        for (int s: sumCount) {
-            System.out.println(s/216);
+        for (int s : sumCount) {
+            System.out.println(s / 216);
         }
         // 真的要顯示小數點就至少朝這方向修改
 //        System.out.println(Arrays.toString(sumCount));
@@ -37,8 +38,8 @@ public class Check_0799_Final {
 //            System.out.println("點數和為" + i + "的機率為：" + (double)sumCount[i-3]/216);
 //        }
         System.out.println(Arrays.toString(sumCount));
-        for (int i = 3; i <=18; i++) {
-            System.out.println("點數和為" + i + "的機率為：" + sumCount[i-3] + "/" +216);
+        for (int i = 3; i <= 18; i++) {
+            System.out.println("點數和為" + i + "的機率為：" + sumCount[i - 3] + "/" + 216);
         }
 
     }
@@ -53,8 +54,8 @@ public class Check_0799_Final {
         char[] orig = new char[]{'a', 'b', 'c', 'd'};
         char[] rev = new char[orig.length];
         System.out.println(Arrays.toString(orig));
-        for (int i = orig.length-1; i >= 0 ; i--) {
-            rev[(orig.length-1)-i] = orig[i];
+        for (int i = orig.length - 1; i >= 0; i--) {
+            rev[(orig.length - 1) - i] = orig[i];
         }
         System.out.println(Arrays.toString(rev));
     }
@@ -123,6 +124,14 @@ public class Check_0799_Final {
     // 您的程式必須將陣列a的內容更改為：
     // 40,20,50,30
     static void exchanging03() {
-
+        int[] a = new int[]{45, 27, 93, 14, 65};
+        System.out.println(Arrays.toString(a));
+        int[] b = new int[]{4, 2, 0, 1, 3};
+        for (int i: a) {
+            for (int j = 0; j < b.length; j++) {
+                a[b[j]] = i;
+            }
+        }
+        System.out.println(Arrays.toString(a));
     }
 }
