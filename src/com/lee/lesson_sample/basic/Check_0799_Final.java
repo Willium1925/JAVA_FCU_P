@@ -114,4 +114,15 @@ public class Check_0799_Final {
 //        char[] numC2 = strNumC.toCharArray();
 //        System.out.println(numC2);
     }
+
+    // 請撰寫一個程式，宣告2個陣列變數a與b，分別指向擁有同樣個數元素的陣列，並且將a中元素依據b中對應位置的元素值來調換位置。
+    // 舉例來說，如果a 與b的內容如下：
+    // 陣列 a：20, 30, 40, 50
+    // 陣列 b：1, 3, 0, 2
+    // 就是要將a改成：a[1]=20, a[3]=30, a[0]=40, a[2]=50
+    // 您的程式必須將陣列a的內容更改為：
+    // 40,20,50,30
+    static void exchanging03() {
+
+    }
 }
