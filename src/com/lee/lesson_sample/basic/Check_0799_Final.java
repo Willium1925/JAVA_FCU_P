@@ -4,7 +4,10 @@ import java.util.Arrays;
 
 public class Check_0799_Final {
     public static void main(String[] args) {
-        diceTestThree();
+        //diceTestThree();
+        //reverseTest();
+        //exchanging();
+        exchanging02();
     }
 
     // 擲三個骰子，統計各種點數和出現的機率
@@ -38,5 +41,77 @@ public class Check_0799_Final {
             System.out.println("點數和為" + i + "的機率為：" + sumCount[i-3] + "/" +216);
         }
 
+    }
+
+    // 反転冲动
+    static void reverseTest() {
+        // 錯誤寫法！
+        //char[] orig = new char[]{a, b, c, d, e, f, g};
+        //String[] origS = new String[]{a, b, c, d, e, f, g};
+
+        // 正確
+        char[] orig = new char[]{'a', 'b', 'c', 'd'};
+        char[] rev = new char[orig.length];
+        System.out.println(Arrays.toString(orig));
+        for (int i = orig.length-1; i >= 0 ; i--) {
+            rev[(orig.length-1)-i] = orig[i];
+        }
+        System.out.println(Arrays.toString(rev));
+    }
+
+    // 意外測出一些東西，關於string對char的特殊待遇
+    static void exchanging() {
+        char[] c = new char[]{'a', 'b', 'c', 'd'};
+        String strC = Arrays.toString(c);
+        System.out.println("純陣列c：" + c);
+        System.out.println("字串化c：" + strC);
+        char[] c2 = strC.toCharArray();
+        System.out.println("純陣列c2：" + c2);
+
+        System.out.println();
+
+        char[] d = new char[]{'a', 'b', 'c', 'd'};
+        String strD = Arrays.toString(d);
+        System.out.println(d);
+        System.out.println(strD);
+        char[] d2 = strD.toCharArray();
+        System.out.println(d2);
+
+        System.out.println();
+
+        char[] e = new char[]{'a', 'b', 'c', 'd'};
+        String strE = new String(e);
+        System.out.println(e);
+        System.out.println(strE);
+        char[] e2 = strE.toCharArray();
+        System.out.println(e2);
+    }
+
+    // 意外測出一些東西，關於string對char的特殊待遇，之二
+    static void exchanging02() {
+        int[] numA = new int[]{1, 2, 3, 4};
+        String strNumA = Arrays.toString(numA);
+        System.out.println("純陣列c：" + numA);
+        System.out.println("字串化c：" + strNumA);
+        char[] numA2 = strNumA.toCharArray();
+        System.out.println("純陣列c2：" + numA2);
+
+        System.out.println();
+
+        int[] numB = new int[]{1, 2, 3, 4};
+        String strNumB = Arrays.toString(numB);
+        System.out.println(numB);
+        System.out.println(strNumB);
+        char[] numB2 = strNumB.toCharArray();
+        System.out.println(numB2);
+
+        System.out.println();
+
+//        int[] numC = new int[]{1, 2, 3, 4};
+//        String strNumC = new String(numC);
+//        System.out.println(numC);
+//        System.out.println(strNumC);
+//        char[] numC2 = strNumC.toCharArray();
+//        System.out.println(numC2);
     }
 }
