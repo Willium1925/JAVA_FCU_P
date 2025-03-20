@@ -8,12 +8,14 @@ public class Check_0799_Final {
     public static void main(String[] args) {
         //diceTestThree();
         //reverseTest();
+//        reverseTest02();
         //exchanging();
         //exchanging02();
         //exchanging03();
         //isPrimeReview();
         //isPrimeWithArrays();
         //isPrimeWithArraysAns();
+        problem09();
     }
 
     // 擲三個骰子，統計各種點數和出現的機率
@@ -63,6 +65,55 @@ public class Check_0799_Final {
             rev[(orig.length - 1) - i] = orig[i];
         }
         System.out.println(Arrays.toString(rev));
+    }
+
+    static void reverseTest02() {  // 直接輸入ＥＮＤ會報錯
+        int count = 0;
+        String strAllInsert = " ";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("請輸入任意個數之整數(若有空白會視為區隔，請注意)，輸入end結束輸入");
+        while (true) {
+            System.out.println("請輸入第" + (count+1) + "個數");
+            String strInsert = sc.nextLine();
+            try {
+                int temp = Integer.parseInt(strInsert);
+            } catch (NumberFormatException e) {
+                System.out.println("請正確輸入整數！");
+                continue;
+            }
+            if (strInsert.equals("end")) {
+                if (count == 0) {
+                    System.out.println("您未輸入任何內容，請確實輸入！");
+                    continue;
+                }
+                break;
+            } else {
+                //System.out.println(Arrays.toString(strInsert.split("\\s+")));
+                String[] strInsertArray = strInsert.trim().split("\\s+");
+                System.out.print("您已輸入第 ");
+                for (String s: strInsertArray) {
+                    strAllInsert = strAllInsert + s + " ";
+                    count++;
+                    System.out.print(count + " ");
+                }
+                System.out.print("個數，");
+            }
+        }
+
+        String[] strAllInsertArray = strAllInsert.trim().split("\\s+");
+        int[] intInsertArray = new int[strAllInsertArray.length];
+        int[] intInsertArrayRev = new int[intInsertArray.length];
+
+        for (int i = 0; i < strAllInsertArray.length; i++) {
+            intInsertArray[i] = Integer.parseInt(strAllInsertArray[i]);
+        }
+
+        for (int i = intInsertArray.length - 1; i >= 0; i--) {
+            intInsertArrayRev[(intInsertArray.length - 1) - i] = intInsertArray[i];
+        }
+        System.out.println("總輸入轉成的字串陣列:" + "\n"+ Arrays.toString(strAllInsertArray));
+        System.out.println("字串陣列再轉成int陣列:" + "\n"+ Arrays.toString(intInsertArray));
+        System.out.println("最終完成反轉int陣列:" + "\n"+ Arrays.toString(intInsertArrayRev));
     }
 
     // 意外測出一些東西，關於string對char的特殊待遇
@@ -171,6 +222,8 @@ public class Check_0799_Final {
 
         Arrays.fill(isPrimeArray, true); // 先假設都是質數
 
+
+
         // 假設到50
         //2 4 6 8 10 12 14...2*24 2*25
         //3 6 9 12...3*15 3*16
@@ -229,21 +282,54 @@ public class Check_0799_Final {
 
     // 輸入任意陣列，找出陣列中是否有元素質等於該元素的索引值
     static void problem09() {
+        int count = 0;
+        String strAllInsert = " ";
         Scanner sc = new Scanner(System.in);
-        System.out.println("請輸入數個任意內容，每次輸入完請enter，輸入end結束輸入");
-        StringBuilder strInsertAll = new StringBuilder("");
-        int count = 1;
+        System.out.println("請輸入任意個數之數字(若有空白會視為區隔，請注意)，輸入end結束輸入");
         while (true) {
+            System.out.println("請輸入第" + (count+1) + "個數");
             String strInsert = sc.nextLine();
             if (strInsert.equals("end")) {
+                if (count == 0) {
+                    System.out.println("您未輸入任何內容，請確實輸入！");
+                    continue;
+                }
                 break;
             } else {
-                strInsertAll = strInsertAll.append(strInsert).append("");
+                try {
+                    double temp = Double.parseDouble(strInsert);
+                } catch (NumberFormatException e) {
+                    System.out.println("請正確輸入數字！");
+                    continue;
+                }
+                //System.out.println(Arrays.toString(strInsert.split("\\s+")));
+                String[] strInsertArray = strInsert.split("\\s+");
+                System.out.print("您已輸入第 ");
+                for (String s: strInsertArray) {
+                    strAllInsert = strAllInsert + s + " ";
+                    count++;
+                    System.out.print(count + " ");
+                }
+                System.out.print("個數，");
             }
-
         }
+        String[] strAllInsertArray = strAllInsert.trim().split("\\s+");
+        BigDecimal[] bigInsertArray = new BigDecimal[strAllInsertArray.length];
+        for (int i = 0; i < strAllInsertArray.length; i++) {
+            bigInsertArray[i] = new BigDecimal(strAllInsertArray[i]);
+        }
+        System.out.println("總輸入轉成的字串陣列:" + "\n"+ Arrays.toString(strAllInsertArray));
+        System.out.println("字串陣列再轉成BIG陣列:" + "\n"+ Arrays.toString(bigInsertArray));
 
+        for (int i = 0; i < bigInsertArray.length; i++) {
+            try {
+                int temp = bigInsertArray[i].intValueExact();
+                if (temp == i) {
+                    System.out.println("第" + (i+1) + "個元素其值為" + bigInsertArray[i] + "，剛剛好等於他的索引值" + i + "！");
+                }
+            } catch (ArithmeticException _) {
+                continue;
+            }
+        }
     }
-
-
 }
