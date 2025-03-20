@@ -8,7 +8,7 @@ public class Array03_Bubble {
         //bubbleTest();
         //bubbleTest02();
         //bubbleTest03();
-        bubbleCheck();
+        bubbleCheckReverse();
     }
 
     static  void forEachTest() {
@@ -68,16 +68,17 @@ public class Array03_Bubble {
         }
     }
 
-    static void bubbleCheck() {
+    static void bubbleCheckReverse() {
         //4321
         //3214
         //2134
         //1234
         int count = 0;
-        int[] num = new int[]{40, 30, 20, 10};
-        for (int i = 0; i < num.length; i++) {
-            for (int j = 0; j < num.length-1; j++) {
-                if (num[j] > num[j+1]) {
+        //int[] num = new int[]{40, 30, 20, 10};
+        int[] num = new int[]{1, 2, 3, 4};
+        for (int i = 0; i < num.length-1; i++) {
+            for (int j = 0; j < num.length-1-i; j++) {
+                if (num[j] < num[j+1]) {
                     int tempBig = num[j];
                     num[j] = num[j+1];
                     num[j+1] = tempBig;
