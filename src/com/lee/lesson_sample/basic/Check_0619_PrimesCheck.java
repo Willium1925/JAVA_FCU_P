@@ -84,8 +84,6 @@ public class Check_0619_PrimesCheck {
     }
 
     static void primesListTest04() {
-
-
         while (true) {
             Scanner sc  = new Scanner(System.in);
             System.out.println("請輸入起始數字(正整數)");
