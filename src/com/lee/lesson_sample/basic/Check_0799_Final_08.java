@@ -21,16 +21,44 @@ public class Check_0799_Final_08 {
         int count = 0;
         String strAllInsert = " ";
         Scanner sc = new Scanner(System.in);
-        System.out.println("請輸入任意個數之數字，輸入end結束輸入");
+        System.out.println("請輸入任意個數之數字(若有空白會視為區隔，請注意)，輸入end結束輸入");
+
+//        while (true) {
+//            System.out.println("請輸入第" + (count+1) + "個數");
+//            String strInsert = sc.next();
+//            if (strInsert.equals("end")) {
+//                break;
+//            } else {
+//                strAllInsert = strAllInsert + strInsert + " ";
+//                count++;
+//            }
+//        }
 
         while (true) {
             System.out.println("請輸入第" + (count+1) + "個數");
-            String strInsert = sc.next();
+            String strInsert = sc.nextLine();
             if (strInsert.equals("end")) {
+                if (count == 0) {
+                    System.out.println("您未輸入任何內容，請確實輸入！");
+                    continue;
+                }
                 break;
             } else {
-                strAllInsert = strAllInsert + strInsert + " ";
-                count++;
+                try {
+                    double temp = Double.parseDouble(strInsert);
+                } catch (NumberFormatException e) {
+                    System.out.println("請正確輸入數字！");
+                    continue;
+                }
+                //System.out.println(Arrays.toString(strInsert.split("\\s+")));
+                String[] strInsertArray = strInsert.split("\\s+");
+                System.out.print("您已輸入第 ");
+                for (String s: strInsertArray) {
+                    strAllInsert = strAllInsert + s + " ";
+                    count++;
+                    System.out.print(count + " ");
+                }
+                System.out.print("個數，");
             }
         }
         // 這裡若添加1，意思是"分成一個"，若是2，意思是"分成二個"
