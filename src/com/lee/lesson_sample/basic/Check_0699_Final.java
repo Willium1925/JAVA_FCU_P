@@ -36,7 +36,7 @@ public class Check_0699_Final {
     }
 
     // 計算指定兩數間所有整數之和
-    static void sumBetween() {
+    static void sumBetween() { //5 0 再測試
         Scanner sc = new Scanner(System.in);
         System.out.println("將計算指定兩數間所有整數之和");
         System.out.println("請指定起始數");
@@ -310,7 +310,7 @@ public class Check_0699_Final {
         a~z 97~122
         */
         Scanner sc = new Scanner(System.in);
-        System.out.println("請輸入密碼，4~8位，須包含數字和英文");
+        System.out.println("請輸入密碼，4~8位，須包含數字和大小寫英文");
 
         while (true) {
             String password = sc.nextLine();
