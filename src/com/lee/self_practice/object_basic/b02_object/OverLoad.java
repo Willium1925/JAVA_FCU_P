@@ -17,7 +17,7 @@ public class OverLoad {
                 int b = sc.nextInt();
                 countAvg.setA(a);
                 countAvg.setB(b);
-                System.out.println(a + "加" + b +"等於:" + countAvg.getSum(a, b));
+                System.out.println(a + "加" + b +"等於:" + countAvg.getSum());
             } else if (str.equals("多")) {
                 System.out.println("請輸入任意個數的數字");
                 String strInt = sc.nextLine();
