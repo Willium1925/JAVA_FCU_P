@@ -81,7 +81,7 @@ public class CountAvg {
     // 錯!!!
     // 要是寫成CountAvg() {System.out.print("surprise MDFK")}
     // 你在某個地方寫CountAvg cag = new CountAvg();時，
-    // console區是會跑出山謬傑克森的!!!!!!!
+    // console區是會跑出山謬傑克森的啦哈哈哈!!!!!!!
 
     //CountAvg() {
     //}
