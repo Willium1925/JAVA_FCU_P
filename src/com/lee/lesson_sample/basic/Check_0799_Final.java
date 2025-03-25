@@ -16,6 +16,7 @@ public class Check_0799_Final {
         //isPrimeWithArrays();
         //isPrimeWithArraysAns();
         problem09();
+        //problem09V02();
     }
 
     // 擲三個骰子，統計各種點數和出現的機率
@@ -67,7 +68,9 @@ public class Check_0799_Final {
         System.out.println(Arrays.toString(rev));
     }
 
-    static void reverseTest02() {  // 直接輸入ＥＮＤ會報錯
+    // 反転冲动02
+    // 修正直接輸入ＥＮＤ會報錯
+    static void reverseTest02() {
         int count = 0;
         String strAllInsert = " ";
         Scanner sc = new Scanner(System.in);
@@ -281,6 +284,7 @@ public class Check_0799_Final {
     }
 
     // 輸入任意陣列，找出陣列中是否有元素質等於該元素的索引值
+    // 修正了一開始就end會報錯的bug，增加了是數值的檢查，但一次性輸入失效了
     static void problem09() {
         int count = 0;
         String strAllInsert = " ";
@@ -311,6 +315,60 @@ public class Check_0799_Final {
                     System.out.print(count + " ");
                 }
                 System.out.print("個數，");
+            }
+        }
+        String[] strAllInsertArray = strAllInsert.trim().split("\\s+");
+        BigDecimal[] bigInsertArray = new BigDecimal[strAllInsertArray.length];
+        for (int i = 0; i < strAllInsertArray.length; i++) {
+            bigInsertArray[i] = new BigDecimal(strAllInsertArray[i]);
+        }
+        System.out.println("總輸入轉成的字串陣列:" + "\n"+ Arrays.toString(strAllInsertArray));
+        System.out.println("字串陣列再轉成BIG陣列:" + "\n"+ Arrays.toString(bigInsertArray));
+
+        for (int i = 0; i < bigInsertArray.length; i++) {
+            try {
+                int temp = bigInsertArray[i].intValueExact();
+                if (temp == i) {
+                    System.out.println("第" + (i+1) + "個元素其值為" + bigInsertArray[i] + "，剛剛好等於他的索引值" + i + "！");
+                }
+            } catch (ArithmeticException _) {
+                continue;
+            }
+        }
+    }
+
+    // 嘗試修改中...
+    static void problem09V02() {
+        int count = 0;
+        String strAllInsert = " ";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("請輸入任意個數之數字(若有空白會視為區隔，請注意)，輸入end結束輸入");
+        while (true) {
+            System.out.println("請輸入第" + (count+1) + "個數");
+            String strInsert = sc.nextLine();
+            if (strInsert.equals("end")) {
+                if (count == 0) {
+                    System.out.println("您未輸入任何內容，請確實輸入！");
+                    continue;
+                }
+                break;
+            } else {
+                String[] strInsertArray = strInsert.split("\\s+");
+                System.out.print("您已輸入第 ");
+                for (String s: strInsertArray) {
+                    try {
+                        count++;
+                        double temp = Double.parseDouble(s);
+                    } catch (NumberFormatException e) {
+                        System.out.println("第" + (count) + "個數:" + strInsertArray[count-1] + "格式錯誤，請正確輸入數字！");
+                        count--;
+                        break;
+                    }
+                    strAllInsert = strAllInsert + s + " ";
+                    System.out.print(count + " ");
+                }
+                System.out.print("個數，");
+                //System.out.println(Arrays.toString(strInsert.split("\\s+")));
             }
         }
         String[] strAllInsertArray = strAllInsert.trim().split("\\s+");
