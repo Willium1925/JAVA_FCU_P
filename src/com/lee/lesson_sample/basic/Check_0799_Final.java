@@ -15,8 +15,8 @@ public class Check_0799_Final {
         //isPrimeReview();
         //isPrimeWithArrays();
         //isPrimeWithArraysAns();
-        problem09();
-        //problem09V02();
+        //problem09();
+        problem09V02();
     }
 
     // 擲三個骰子，統計各種點數和出現的機率
@@ -362,16 +362,16 @@ public class Check_0799_Final {
             } else {
                 String[] strInsertArray = strInsert.split("\\s+");
                 System.out.print("您已輸入第 ");
-                for (String s: strInsertArray) {
+                for (int i = 0; i < strInsertArray.length; i++) {
                     try {
                         count++;
-                        double temp = Double.parseDouble(s);
+                        double temp = Double.parseDouble(strInsertArray[i]);
                     } catch (NumberFormatException e) {
-                        System.out.println("第" + (count) + "個數:" + strInsertArray[count-1] + "格式錯誤，請正確輸入數字！");
+                        System.out.println("第" + (count+i) + "個數:" + strInsertArray[i] + "格式錯誤，請正確輸入數字！");
                         count--;
                         break;
                     }
-                    strAllInsert = strAllInsert + s + " ";
+                    strAllInsert = strAllInsert + strInsertArray[i] + " ";
                     System.out.print(count + " ");
                 }
                 System.out.print("個數，");
