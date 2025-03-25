@@ -371,7 +371,7 @@ public class Check_0799_Final {
                         break;
                     }
                     strAllInsert = strAllInsert + strInsertArray[i] + " ";
-                    System.out.print(count + " ");
+                    //System.out.print(count + " ");
                 }
                 System.out.print("您已輸入第 ");
                 for (int c = 1; c <=count; c++) {
