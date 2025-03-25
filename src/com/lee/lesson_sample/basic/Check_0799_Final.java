@@ -325,15 +325,22 @@ public class Check_0799_Final {
         System.out.println("總輸入轉成的字串陣列:" + "\n"+ Arrays.toString(strAllInsertArray));
         System.out.println("字串陣列再轉成BIG陣列:" + "\n"+ Arrays.toString(bigInsertArray));
 
+        boolean hasAns = false;
         for (int i = 0; i < bigInsertArray.length; i++) {
             try {
                 int temp = bigInsertArray[i].intValueExact();
                 if (temp == i) {
+                    hasAns = true;
                     System.out.println("第" + (i+1) + "個元素其值為" + bigInsertArray[i] + "，剛剛好等於他的索引值" + i + "！");
                 }
             } catch (ArithmeticException _) {
                 continue;
             }
+        }
+        if (!hasAns) {
+            System.out.println("哎呀沒有符合的結果～");
+        } else {
+            System.out.println("恭喜！再見！");
         }
     }
 
