@@ -28,7 +28,6 @@ public class Problem08 {
         int bought = 8;
         int barrow = 0;
         int drank = 0;
-
         drank = (bought/3) + bought%3+1;
     }
 }
