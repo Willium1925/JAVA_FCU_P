@@ -8,7 +8,7 @@ import java.util.Scanner;
 // 1 2 3 3 3 4 5 6 6 7   ---   3,3
 //當使用者輸入超過10個整數時顯示"Out of range"
 // {1, 2, 2, 2, 4} 實際數值
-// [0  1  2  3  4] 索引值
+//  0  1  2  3  4  索引值，剛好可以代表１～４
 // {0, 0, 0, 0, 0} 計數器
 public class Problem02 {
     public static void main(String[] args) {
