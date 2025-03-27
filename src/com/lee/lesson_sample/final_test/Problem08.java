@@ -92,6 +92,33 @@ public class Problem08 {
         System.out.println(count);
     }
 
+//        8滿 0空        8
+//            8空
+//        2滿 2空
+//        2滿 2空+1借空
+//        3滿            3
+//            3空
+//        1滿            1
+//            1空
+    static void test03() {
+        Scanner sc = new Scanner(System.in);
+        int full = sc.nextInt();
+        int empty = full;
+        int newfull = 0;
+        int leftempty = 0;
+        int borrow = 0;
+
+        newfull = full/3;
+        leftempty = full%3;
+        if (leftempty == 2) {
+            leftempty = leftempty +1;
+            borrow++;
+        }
+
+
+
+    }
+
     static void ans01() {
         Scanner input = new Scanner(System.in);
         while(true){
@@ -116,7 +143,6 @@ public class Problem08 {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
             int bfull = sc.nextInt(); // 讀取初始瓶數
-            if (bfull == 0) break; // 若輸入0則結束程式
             int count = bfull; // 記錄總共喝了幾瓶
             int empty = bfull; // 記錄當前的空瓶數
 
