@@ -23,9 +23,11 @@ import java.util.Scanner;
 // 13
 public class Problem08 {
     public static void main(String[] args) {
-        test02();
-//        ans01();
-//        ans02();
+        //test02();
+        //ans01();
+        //ans02();
+        ans03();
+        //ans04();
     }
 
     static void test01() {
@@ -160,5 +162,62 @@ public class Problem08 {
             System.out.println(count);
         }
         sc.close();
+    }
+
+    static void ans03() {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            int bfull = sc.nextInt(); // 初始滿瓶數
+
+            if (bfull <= 0 || bfull > 200) {
+                break;
+            }
+            int count = bfull; // 紀錄喝了幾瓶
+            int empty = bfull; // 記錄當前空瓶數
+
+            while (empty >= 3) { // 當有足夠的空瓶可以兌換時
+                int newDrink = empty / 3; // 兌換的新滿瓶
+                count += newDrink; // 新的喝光，加進計數
+                empty = empty % 3 + newDrink; // 更新剩餘空瓶數
+            }
+
+            // 如果最後剩2個空瓶，可以向店家借1瓶，再喝完還回來
+            if (empty == 2) {
+                count++;
+            }
+
+            System.out.println(count);
+        }
+        sc.close();
+    }
+
+    static void ans04() {
+        Scanner sc=new Scanner(System.in);
+        while (true) {
+            int a = sc.nextInt();
+            if (a >= 1 && a <= 200) {
+                int sum = a;
+                a++;
+                while (a > 0) {
+
+                    int b = a / 3;
+                    int c = a % 3;
+                    sum += b;
+
+                    b += c;
+
+                    if (b >= 3) {
+                        a = b;
+                    } else if (b < 3) {
+                        a = 0;
+                    }
+                }
+                System.out.println(sum);
+
+            }else {
+                break;
+            }
+
+        }
     }
 }
