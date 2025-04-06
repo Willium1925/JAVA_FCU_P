@@ -181,7 +181,7 @@ public class Problem08 {
                 empty = empty % 3 + newDrink; // 更新剩餘空瓶數
             }
 
-            // 如果最後剩2個空瓶，可以向店家借1瓶，再喝完還回來
+            // 剩2瓶再借，喝完剛好還回來
             if (empty == 2) {
                 count++;
             }
